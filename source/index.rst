@@ -9,6 +9,5 @@
    :maxdepth: 4
    :glob:
    
-   plotting
-   applied-probabilistic-inference/*
+   diffusion-approximation/*
    references

@@ -18,9 +18,9 @@
 # -- Project information -----------------------------------------------------
 master_doc = 'index'
 
-project = 'nbsphinx template'
-copyright = '2021, Cameron Smith'
-author = 'Cameron Smith'
+project = 'Analysis of the Birth-Immigration-Death process'
+copyright = '2021, Raymond Puzio, Cameron Smith'
+author = 'Raymond Puzio, Cameron Smith'
 
 
 # -- General configuration ---------------------------------------------------
@@ -53,8 +53,8 @@ nbsphinx_prolog = r"""
 
     <div class="admonition note">
       This page was generated from
-      <a class="reference external" href="https://github.com/cameronraysmith/nbsphinx-template/blob/master/{{ docname|e }}">{{ docname|e }}</a>.
-      <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/cameronraysmith/nbsphinx-template/master?filepath={{ docname|e }}"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a> or </span>
+      <a class="reference external" href="https://github.com/cameronraysmith/bid-analysis/blob/master/{{ docname|e }}">{{ docname|e }}</a>.
+      <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/cameronraysmith/bid-analysis/master?filepath={{ docname|e }}"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a> or </span>
       <script>
         if (document.location.host) {
           $(document.currentScript).replaceWith(

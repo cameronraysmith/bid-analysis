@@ -1,7 +1,6 @@
-Template repository for nbsphinx
-================================
+Analysis of the Birth-Immigration-Death process
+===============================================
 
-This repository serves as a template for using nbsphinx_ to compile a collection of jupyter notebooks into html and, via LaTeX_, pdf.
+This repository contains an analysis of the birth-immigration-death process in maxima_.
 
-.. _nbsphinx: https://github.com/spatialaudio/nbsphinx
-.. _LaTeX: https://www.latex-project.org
+.. _maxima: https://maxima.sourceforge.io/index.html
