@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.11.2
+      jupytext_version: 1.11.3
   kernelspec:
     display_name: Maxima
     language: maxima
@@ -19,7 +19,7 @@ jupyter:
 # Moment generating function
 <!-- #endregion -->
 
-```maxima tags=[]
+```maxima
 genfunc (x, t, n0, kb, kd) := 
     ((kd * %e^(- (kb - kd) * t) - kd + 
         (kd - kb * %e^(- (kb - kd) * t)) * x) / 
@@ -29,7 +29,7 @@ genfunc (x, t, n0, kb, kd) :=
 
 Extract the probability distribution
 
-```maxima tags=[]
+```maxima
 probdist (m, t, n0, kb, kd) :=
 block([gf],
     gf : genfunc(z, t, n0, kb, kd),
@@ -39,11 +39,13 @@ block([gf],
 
 Reparameterize it according to the diffusion approximation.
 
+
 ```maxima tags=[]
 
 factor(genfunc(z / N, N * tau, N * x0, D + s/(2*N), D - s/(2*N)));
 
 ```
+
 
 ```maxima tags=[]
 
