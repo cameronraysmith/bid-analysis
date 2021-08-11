@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Moment generating function &#8212; Analysis of the Birth-Immigration-Death process</title>
+    <title>Updated analysis &#8212; Analysis of the Birth-Immigration-Death process</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/insipid.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -19,7 +19,7 @@
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script defer src="../_static/insipid.js"></script>
     <script defer src="../_static/insipid-sidebar.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -62,7 +62,7 @@
           </div>
           <div class="title">
             <a class="parent" href="../index.html" accesskey="U">Analysis of the Birth-Immigration-Death process</a>
-            <a class="top" href="#">Moment generating function</a>
+            <a class="top" href="#">Updated analysis</a>
           </div>
           <div class="buttons">
             <button id="fullscreen-button" type="button" aria-hidden="true">
@@ -387,7 +387,849 @@ div.rendered_html tbody tr:hover {
     }
   </script>
 </div><center><p>Generating function analysis of the diffusion approximation to the birth-immigration-death process</p>
-</center><div class="section" id="Moment-generating-function">
+</center><div class="section" id="Updated-analysis">
+<h1>Updated analysis<a class="headerlink" href="#Updated-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Check-the-solution-to-the-characteristic-equation.">
+<h2>Check the solution to the characteristic equation.<a class="headerlink" href="#Check-the-solution-to-the-characteristic-equation." title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>chartu: logcontract(integrate(1/(-D * theta^2 + s * theta), theta));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{4}$}\frac{\log \left(\frac{\vartheta}{D\,\vartheta-s}\right)}{s}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>chartsolu: logcontract(chartu - subst(theta[0], theta, chartu));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{5}$}\frac{\log \left(-\frac{\left(s-\vartheta_{0}\,D\right)\,\vartheta}{\vartheta_{0}\,\left(D\,\vartheta-s\right)}\right)}{s}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>chartsoltheta: solve([chartsolu=u], theta);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{6}$}\left[ \vartheta=\frac{\vartheta_{0}\,s\,e^{s\,u}}{\vartheta_{0}\,D\,e^{s\,u}+s-\vartheta_{0}\,D} \right] \]</div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">\label{eq:diffapprox-theta-char}</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>chartheta : s * theta[0] / (D * (1 - %e^(-s*u)) * theta[0] + s * %e^(-s * u));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{7}$}\frac{\vartheta_{0}\,s}{s\,e^ {- s\,u }+\vartheta_{0}\,D\,\left(1-e^ {- s\,u }\right)}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>solve(chartheta=theta,theta[0]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{8}$}\left[ \vartheta_{0}=-\frac{s\,\vartheta}{\left(D\,\vartheta-s\right)\,e^{s\,u}-D\,\vartheta} \right] \]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>subst(0, u, chartheta);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{9}$}\vartheta_{0}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>chareqn(theta) := diff(theta, u) + D * theta^2 - s * theta;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{10}$}{\it chareqn}\left(\vartheta\right):={\it diff}\left(\vartheta , u\right)+D\,\vartheta^2+\left(-s\right)\,\vartheta\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>chareqn(theta(u));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{11}$}\frac{d}{d\,u}\,\vartheta\left(u\right)+D\,\vartheta\left(u\right)^2-s\,\vartheta\left(u\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(chareqn(chartheta));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{12}$}0\]</div></div>
+</div>
+</div>
+<div class="section" id="Check-the-solution-for-the-cumulant-generating-function.">
+<h2>Check the solution for the cumulant generating function.<a class="headerlink" href="#Check-the-solution-for-the-cumulant-generating-function." title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>cgfsol :  s * %e^(s * tau) * theta/ (D* (%e^(s * tau) - 1) * theta+ s);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{13}$}\frac{s\,e^{s\,\tau}\,\vartheta}{D\,\left(e^{s\,\tau}-1\right)\,\vartheta+s}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>gfeqn (gam) := diff(gam, tau) + theta * (D*theta - s) * diff(gam, theta);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{14}$}{\it gfeqn}\left({\it gam}\right):={\it diff}\left({\it gam} , \tau\right)+\vartheta\,\left(D\,\vartheta-s\right)\,{\it diff}\left({\it gam} , \vartheta\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>gfeqn(Gamma(theta,tau));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{15}$}\vartheta\,\left(D\,\vartheta-s\right)\,\left(\frac{d}{d\,\vartheta}\,\Gamma\left(\vartheta , \tau\right)\right)+\frac{d}{d\,\tau}\,\Gamma\left(\vartheta , \tau\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(gfeqn(cgfsol));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{16}$}0\]</div></div>
+</div>
+</div>
+<div class="section" id="Find-the-characteristic-which-passes-through-a-given-point-(\theta_f,-\tau_f).">
+<h2>Find the characteristic which passes through a given point (<span class="math notranslate nohighlight">\(\theta_f\)</span>, <span class="math notranslate nohighlight">\(\tau_f\)</span>).<a class="headerlink" href="#Find-the-characteristic-which-passes-through-a-given-point-(\theta_f,-\tau_f)." title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>th0sol : solve([theta[f] = subst(u[f], u, chartheta)], [theta[0]]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{17}$}\left[ \vartheta_{0}=\frac{\vartheta_{f}\,s}{\left(s-D\,\vartheta_{f}\right)\,e^{u_{f}\,s}+D\,\vartheta_{f}} \right] \]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(psubst(th0sol, chartheta));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{18}$}\frac{\vartheta_{f}\,s\,e^{s\,u}}{D\,\vartheta_{f}\,e^{s\,u}+s\,e^{u_{f}\,s}-D\,\vartheta_{f}\,e^{u_{f}\,s}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(subst(tau[0]-tau[f], u[f], psubst(th0sol, chartheta)));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{19}$}\frac{\vartheta_{f}\,s\,e^{s\,u+\tau_{f}\,s}}{D\,\vartheta_{f}\,e^{s\,u+\tau_{f}\,s}+s\,e^{\tau_{0}\,s}-D\,\vartheta_{f}\,e^{\tau_{0}\,s}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>(theta[f]*s*%e^(uf*s))/
+    (s*%e^(s*u)-D*theta[f]*%e^(s*u)+D*theta[f]*%e^(uf*s));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{20}$}\frac{\vartheta_{f}\,s\,e^{s\,{\it uf}}}{D\,\vartheta_{f}\,e^{s\,{\it uf}}+s\,e^{s\,u}-D\,\vartheta_{f}\,e^{s\,u}}\]</div></div>
+</div>
+</div>
+<div class="section" id="Integrate-along-that-characteristic.">
+<h2>Integrate along that characteristic.<a class="headerlink" href="#Integrate-along-that-characteristic." title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>ginhint : integrate((theta[f]*s*%e^(uf*s))/
+    (s*%e^(s*u)-D*theta[f]*%e^(s*u)+D*theta[f]*%e^(uf*s)), u);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{21}$}\vartheta_{f}\,s\,e^{s\,{\it uf}}\,\left(\frac{u\,e^ {- s\,{\it uf} }}{D\,\vartheta_{f}}-\frac{e^ {- s\,{\it uf} }\,\log \left(D\,\vartheta_{f}\,e^{s\,{\it uf}}+\left(s-D\,\vartheta_{f}\right)\,e^{s\,u}\right)}{D\,\vartheta_{f}\,s}\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>ginhint : integrate((theta[f]*s*%e^(u*s))/
+    (s*%e^(s*uf)-D*theta[f]*%e^(s*uf)+D*theta[f]*%e^(u*s)), u);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{24}$}\frac{\log \left(s\,e^{s\,{\it uf}}-D\,\vartheta_{f}\,e^{s\,{\it uf}}+D\,\vartheta_{f}\,e^{s\,u}\right)}{D}\]</div></div>
+</div>
+</div>
+<div class="section" id="Check-the-resulting-inhomogenous-solution-to-the-c.g.f.-equation.">
+<h2>Check the resulting inhomogenous solution to the c.g.f. equation.<a class="headerlink" href="#Check-the-resulting-inhomogenous-solution-to-the-c.g.f.-equation." title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>logcontract(ev(factor(subst(uf, u, ginhint) - subst(0, u, ginhint)), logexpand=super));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{25}$}\frac{\log \left(\frac{s}{\left(s-D\,\vartheta_{f}\right)\,e^{s\,{\it uf}}+D\,\vartheta_{f}}\right)+s\,{\it uf}}{D}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>gaminh: M*psubst([theta[f]=theta, uf=tau], logcontract(ev(factor(subst(uf, u, ginhint) - subst(0, u, ginhint)))));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{26}$}\frac{M\,\log \left(\frac{s\,e^{s\,\tau}}{e^{s\,\tau}\,\left(s-D\,\vartheta\right)+D\,\vartheta}\right)}{D}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>gaminhreform: -(M/D) * log( (D/s) * (%e^(-s * tau) - 1) * theta + 1);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{27}$}-\frac{M\,\log \left(\frac{D\,\left(e^ {- s\,\tau }-1\right)\,\vartheta}{s}+1\right)}{D}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>logcontract(gaminh - gaminhreform);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{33}$}0\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>gaminh : -(M/D) * log( (D/s) * (%e^(s * tau) - 1) * theta + 1);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{34}$}-\frac{M\,\log \left(\frac{D\,\left(e^{s\,\tau}-1\right)\,\vartheta}{s}+1\right)}{D}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(gfeqn(gaminh));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{36}$}-M\,\vartheta\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(gfeqn(gaminh));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{37}$}-M\,\vartheta\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>mgfinh : ( (D/s) * (%e^(s * tau) - 1) * theta + 1)^(-M/D);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{38}$}\frac{1}{\left(\frac{D\,\left(e^{s\,\tau}-1\right)\,\vartheta}{s}+1\right)^{\frac{M}{D}}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(gfeqn(mgfinh) + M * theta * mgfinh);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{39}$}0\]</div></div>
+</div>
+</div>
+<div class="section" id="Check-the-old-solution-for-the-probability-density.">
+<h2>Check the old solution for the probability density.<a class="headerlink" href="#Check-the-old-solution-for-the-probability-density." title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>difeqn(rho(x,tau));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{18}$}{\it difeqn}\left(\rho\left(x , \tau\right)\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>difeqn (rho) := D * diff(x * rho, x, 2) - s * diff(x * rho, x)
+    - M * diff(rho, x) - diff(rho, tau);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{19}$}{\it difeqn}\left(\rho\right):=D\,{\it diff}\left(x\,\rho , x , 2\right)-s\,{\it diff}\left(x\,\rho , x\right)+\left(-M\right)\,{\it diff}\left(\rho , x\right)-{\it diff}\left(\rho , \tau\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>difeqn(rho(x,tau));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{31}$}D\,\left(x\,\left(\frac{d^2}{d\,x^2}\,\rho\left(x , \tau\right)\right)+2\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)\right)-s\,\left(x\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)+\rho\left(x , \tau\right)\right)-M\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)-\frac{d}{d\,\tau}\,\rho\left(x , \tau\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>oldrho : %e^(-(s * x * %e^(-s * tau) / D) / (1 - %e^(-s * tau))) *
+    %e^(-s * tau) * (1 - %e^(-s * tau))^(M/D - 2);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{17}$}\left(1-e^ {- s\,\tau }\right)^{\frac{M}{D}-2}\,e^{-\frac{s\,e^ {- s\,\tau }\,x}{D\,\left(1-e^ {- s\,\tau }\right)}-s\,\tau}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(difeqn(oldrho));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{28}$}0\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>oldrho : %e^(-(s * x * %e^(-s * tau) / D) / (1 - %e^(-s * tau))) *
+    %e^(-s * tau) * (1 - %e^(-s * tau))^(M/D - 2);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{20}$}\left(1-e^ {- s\,\tau }\right)^{\frac{M}{D}-2}\,e^{-\frac{s\,e^ {- s\,\tau }\,x}{D\,\left(1-e^ {- s\,\tau }\right)}-s\,\tau}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(difeqn(oldrho));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{21}$}0\]</div></div>
+</div>
+</div>
+<div class="section" id="Homogeneous-inverse-Laplace-transform">
+<h2>Homogeneous inverse Laplace transform<a class="headerlink" href="#Homogeneous-inverse-Laplace-transform" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>expand(subst(c * thp - 1/b,
+            theta, x * theta  + a * theta / (b * theta + 1)));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{58}$}c\,{\it thp}\,x-\frac{x}{b}-\frac{a}{b^2\,c\,{\it thp}}+\frac{a}{b}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>expand(subst((a^(1/2) * x^(-1/2) * thp - 1)/b, theta,
+            x * theta  + a * theta / (b * theta + 1)));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{59}$}-\frac{x}{b}+\frac{\sqrt{a}\,{\it thp}\,\sqrt{x}}{b}-\frac{\sqrt{a}\,\sqrt{x}}{b\,{\it thp}}+\frac{a}{b}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(psubst([a = x0 * %e^(-s*tau),
+            b = (D/2) * (%e^(-s*tau)- 1)],
+a/b - x/b));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{60}$}-\frac{2\,\left(x_{0}-e^{s\,\tau}\,x\right)}{D\,\left(e^{s\,\tau}-1\right)}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(psubst([a = x0 * %e^(-s*tau),
+            b = (D/2) * (%e^(-s*tau)- 1)],
+(sqrt(a)*sqrt(x))/b));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{61}$}-\frac{2\,e^{\frac{s\,\tau}{2}}\,\sqrt{x}\,\sqrt{x_{0}}}{D\,\left(e^{s\,\tau}-1\right)}\]</div></div>
+</div>
+</div>
+<div class="section" id="Inhomogeneous-inverse-Laplace-transfom">
+<h2>Inhomogeneous inverse Laplace transfom<a class="headerlink" href="#Inhomogeneous-inverse-Laplace-transfom" title="Permalink to this headline">¶</a></h2>
+<p>Trying to solve for the probability density.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>inhdistpart2: factor(subst(tp/x + (s/D)/(1 - %e^(-s*tau)), theta, mgfinh));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{22}$}e^ {- \frac{M\,s\,\tau}{D} }\,\left(-\frac{D\,\left(e^{s\,\tau}-1\right)\,{\it tp}}{s\,x}\right)^{\frac{M}{D}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>inhdistpart1: expand(subst(tp/x + (s/D)/(1 - %e^(-s*tau)), theta, x*theta));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{23}$}\frac{s\,x}{D-D\,e^ {- s\,\tau }}+{\it tp}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>inhdist: 1/x*%e^(inhdistpart1)*inhdistpart2;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{24}$}\frac{\left(-\frac{D\,\left(e^{s\,\tau}-1\right)\,{\it tp}}{s\,x}\right)^{\frac{M}{D}}\,e^{\frac{s\,x}{D-D\,e^ {- s\,\tau }}+{\it tp}-\frac{M\,s\,\tau}{D}}}{x}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>newrho : %e^((s*x/D) / (1 - %e^(-s*tau))) *
+    (%e^(-s*tau) - 1)^(M/D) * x^(-1 - M/D);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{25}$}\left(e^ {- s\,\tau }-1\right)^{\frac{M}{D}}\,x^{-\frac{M}{D}-1}\,e^{\frac{s\,x}{D\,\left(1-e^ {- s\,\tau }\right)}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>neweqn (rho) := -D * diff(x * rho, x, 2) + s * diff(x * rho, x)
+    - M * diff(rho, x) - diff(rho, tau);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{26}$}{\it neweqn}\left(\rho\right):=\left(-D\right)\,{\it diff}\left(x\,\rho , x , 2\right)+s\,{\it diff}\left(x\,\rho , x\right)+\left(-M\right)\,{\it diff}\left(\rho , x\right)-{\it diff}\left(\rho , \tau\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>neweqn(rho(x,tau));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{27}$}-D\,\left(x\,\left(\frac{d^2}{d\,x^2}\,\rho\left(x , \tau\right)\right)+2\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)\right)+s\,\left(x\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)+\rho\left(x , \tau\right)\right)-M\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)-\frac{d}{d\,\tau}\,\rho\left(x , \tau\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(neweqn(newrho));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{28}$}0\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(difeqn(newrho));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{29}$}\frac{2\,\left(1-e^{s\,\tau}\right)^{\frac{M}{D}}\,x^{-\frac{M}{D}-2}\,\left(s^2\,e^{s\,\tau}\,x^2-M\,s\,e^{2\,s\,\tau}\,x+M\,s\,x+M^2\,e^{2\,s\,\tau}+D\,M\,e^{2\,s\,\tau}-2\,M^2\,e^{s\,\tau}-2\,D\,M\,e^{s\,\tau}+M^2+D\,M\right)\,e^{\frac{s\,e^{s\,\tau}\,x}{D\,e^{s\,\tau}-D}-\frac{M\,s\,\tau}{D}}}{D\,\left(e^{s\,\tau}-1\right)^2}\]</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Moment-generating-function">
 <h1>Moment generating function<a class="headerlink" href="#Moment-generating-function" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -481,7 +1323,7 @@ block([gf],
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/diffusion-approximation_genfunc-bid-diffapprox_10_0.svg" src="../_images/diffusion-approximation_genfunc-bid-diffapprox_10_0.svg" /></div>
+<img alt="../_images/diffusion-approximation_genfunc-bid-diffapprox_67_0.svg" src="../_images/diffusion-approximation_genfunc-bid-diffapprox_67_0.svg" /></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -680,7 +1522,7 @@ block([mo],
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/diffusion-approximation_genfunc-bid-diffapprox_20_0.svg" src="../_images/diffusion-approximation_genfunc-bid-diffapprox_20_0.svg" /></div>
+<img alt="../_images/diffusion-approximation_genfunc-bid-diffapprox_77_0.svg" src="../_images/diffusion-approximation_genfunc-bid-diffapprox_77_0.svg" /></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -891,7 +1733,18 @@ wxplot2d(
 
 <h3><a href="../index.html">Table of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Moment generating function</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Updated analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Check-the-solution-to-the-characteristic-equation.">Check the solution to the characteristic equation.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Check-the-solution-for-the-cumulant-generating-function.">Check the solution for the cumulant generating function.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Find-the-characteristic-which-passes-through-a-given-point-(\theta_f,-\tau_f).">Find the characteristic which passes through a given point (<span class="math notranslate nohighlight">\(\theta_f\)</span>, <span class="math notranslate nohighlight">\(\tau_f\)</span>).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Integrate-along-that-characteristic.">Integrate along that characteristic.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Check-the-resulting-inhomogenous-solution-to-the-c.g.f.-equation.">Check the resulting inhomogenous solution to the c.g.f. equation.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Check-the-old-solution-for-the-probability-density.">Check the old solution for the probability density.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Homogeneous-inverse-Laplace-transform">Homogeneous inverse Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Inhomogeneous-inverse-Laplace-transfom">Inhomogeneous inverse Laplace transfom</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#Moment-generating-function">Moment generating function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Functions-to-compute-moments">Functions to compute moments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Compute-cumulants">Compute cumulants</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Appendix">Appendix</a><ul>

@@ -19,12 +19,12 @@
     <script src="_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script defer src="_static/insipid.js"></script>
     <script defer src="_static/insipid-sidebar.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Moment generating function" href="diffusion-approximation/genfunc-bid-diffapprox.html" />
+    <link rel="next" title="Updated analysis" href="diffusion-approximation/genfunc-bid-diffapprox.html" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
   </head>
@@ -83,7 +83,7 @@
       </div>
     </header>
     <nav>
-      <a href="diffusion-approximation/genfunc-bid-diffapprox.html" class="nav-icon next" title="next:&#13;Moment generating function" aria-label="Next topic" accesskey="N" tabindex="-1">
+      <a href="diffusion-approximation/genfunc-bid-diffapprox.html" class="nav-icon next" title="next:&#13;Updated analysis" aria-label="Next topic" accesskey="N" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
       </a>
     </nav>
@@ -93,7 +93,7 @@
         <div class="title">
           <span class="text">
             <span class="direction">next</span>
-            Moment generating function
+            Updated analysis
           </span>
         </div>
         <div class="icon">
@@ -112,7 +112,18 @@
 <p>This repository contains an analysis of the birth-immigration-death process in <a class="reference external" href="https://maxima.sourceforge.io/index.html">maxima</a>.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html">Moment generating function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html">Updated analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Check-the-solution-to-the-characteristic-equation.">Check the solution to the characteristic equation.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Check-the-solution-for-the-cumulant-generating-function.">Check the solution for the cumulant generating function.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Find-the-characteristic-which-passes-through-a-given-point-(\theta_f,-\tau_f).">Find the characteristic which passes through a given point (<span class="math notranslate nohighlight">\(\theta_f\)</span>, <span class="math notranslate nohighlight">\(\tau_f\)</span>).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Integrate-along-that-characteristic.">Integrate along that characteristic.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Check-the-resulting-inhomogenous-solution-to-the-c.g.f.-equation.">Check the resulting inhomogenous solution to the c.g.f. equation.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Check-the-old-solution-for-the-probability-density.">Check the old solution for the probability density.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Homogeneous-inverse-Laplace-transform">Homogeneous inverse Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Inhomogeneous-inverse-Laplace-transfom">Inhomogeneous inverse Laplace transfom</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Moment-generating-function">Moment generating function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Functions-to-compute-moments">Functions to compute moments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Compute-cumulants">Compute cumulants</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Appendix">Appendix</a><ul>
@@ -136,7 +147,7 @@
         <div class="title">
           <span class="text">
             <span class="direction">next</span>
-            Moment generating function
+            Updated analysis
           </span>
         </div>
         <div class="icon">
@@ -153,7 +164,8 @@
 
 <h3><a href="#">Table of Contents</a></h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html">Moment generating function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html">Updated analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Moment-generating-function">Moment generating function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Functions-to-compute-moments">Functions to compute moments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Compute-cumulants">Compute cumulants</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diffusion-approximation/genfunc-bid-diffapprox.html#Appendix">Appendix</a></li>
