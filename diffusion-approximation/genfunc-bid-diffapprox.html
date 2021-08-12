@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Updated analysis &#8212; Analysis of the Birth-Immigration-Death process</title>
+    <title>Updated solution check for the diffusion approximation &#8212; Analysis of the Birth-Immigration-Death process</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/insipid.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Moment-based approximation to the BID process" href="momentapprox.html" />
-    <link rel="prev" title="Analysis of the Birth-Immigration-Death process" href="../index.html" />
+    <link rel="prev" title="Diffusion limit via generating function" href="bid-exact-diffusion-comparison.html" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
   </head>
@@ -62,7 +62,7 @@
           </div>
           <div class="title">
             <a class="parent" href="../index.html" accesskey="U">Analysis of the Birth-Immigration-Death process</a>
-            <a class="top" href="#">Updated analysis</a>
+            <a class="top" href="#">Updated solution check for the diffusion approximation</a>
           </div>
           <div class="buttons">
             <button id="fullscreen-button" type="button" aria-hidden="true">
@@ -84,7 +84,7 @@
       </div>
     </header>
     <nav>
-      <a href="../index.html" class="nav-icon previous" title="previous:&#13;Analysis of the Birth-Immigration-Death process" aria-label="Previous topic" accesskey="P" tabindex="-1">
+      <a href="bid-exact-diffusion-comparison.html" class="nav-icon previous" title="previous:&#13;Diffusion limit via generating function" aria-label="Previous topic" accesskey="P" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
       </a>
       <a href="momentapprox.html" class="nav-icon next" title="next:&#13;Moment-based approximation to the BID process" aria-label="Next topic" accesskey="N" tabindex="-1">
@@ -93,14 +93,14 @@
     </nav>
 
     <nav class="relbar">
-      <a class="previous" href="../index.html" aria-label="Previous topic" >
+      <a class="previous" href="bid-exact-diffusion-comparison.html" aria-label="Previous topic" >
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
         </div>
         <div class="title">
           <span class="text">
             <span class="direction">previous</span>
-            Analysis of the Birth-Immigration-Death process
+            Diffusion limit via generating function
           </span>
         </div>
       </a>
@@ -387,12 +387,12 @@ div.rendered_html tbody tr:hover {
     }
   </script>
 </div><center><p>Generating function analysis of the diffusion approximation to the birth-immigration-death process</p>
-</center><div class="section" id="Updated-analysis">
-<h1>Updated analysis<a class="headerlink" href="#Updated-analysis" title="Permalink to this headline">¶</a></h1>
+</center><div class="section" id="Updated-solution-check-for-the-diffusion-approximation">
+<h1>Updated solution check for the diffusion approximation<a class="headerlink" href="#Updated-solution-check-for-the-diffusion-approximation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Check-the-solution-to-the-characteristic-equation.">
 <h2>Check the solution to the characteristic equation.<a class="headerlink" href="#Check-the-solution-to-the-characteristic-equation." title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -401,15 +401,15 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{4}$}\frac{\log \left(\frac{\vartheta}{D\,\vartheta-s}\right)}{s}\]</div></div>
+\[\tag{${\it \%o}_{1}$}\frac{\log \left(\frac{\vartheta}{D\,\vartheta-s}\right)}{s}\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -418,15 +418,15 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{5}$}\frac{\log \left(-\frac{\left(s-\vartheta_{0}\,D\right)\,\vartheta}{\vartheta_{0}\,\left(D\,\vartheta-s\right)}\right)}{s}\]</div></div>
+\[\tag{${\it \%o}_{2}$}\frac{\log \left(-\frac{\left(s-\vartheta_{0}\,D\right)\,\vartheta}{\vartheta_{0}\,\left(D\,\vartheta-s\right)}\right)}{s}\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -435,12 +435,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{6}$}\left[ \vartheta=\frac{\vartheta_{0}\,s\,e^{s\,u}}{\vartheta_{0}\,D\,e^{s\,u}+s-\vartheta_{0}\,D} \right] \]</div></div>
+\[\tag{${\it \%o}_{3}$}\left[ \vartheta=\frac{\vartheta_{0}\,s\,e^{s\,u}}{\vartheta_{0}\,D\,e^{s\,u}+s-\vartheta_{0}\,D} \right] \]</div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">\label{eq:diffapprox-theta-char}</span></code></p>
 <div class="nbinput docutils container">
@@ -904,7 +904,7 @@ div.rendered_html tbody tr:hover {
 \[\tag{${\it \%o}_{18}$}{\it difeqn}\left(\rho\left(x , \tau\right)\right)\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -914,15 +914,15 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{19}$}{\it difeqn}\left(\rho\right):=D\,{\it diff}\left(x\,\rho , x , 2\right)-s\,{\it diff}\left(x\,\rho , x\right)+\left(-M\right)\,{\it diff}\left(\rho , x\right)-{\it diff}\left(\rho , \tau\right)\]</div></div>
+\[\tag{${\it \%o}_{7}$}{\it difeqn}\left(\rho\right):=D\,{\it diff}\left(x\,\rho , x , 2\right)-s\,{\it diff}\left(x\,\rho , x\right)+\left(-M\right)\,{\it diff}\left(\rho , x\right)-{\it diff}\left(\rho , \tau\right)\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -931,15 +931,33 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{31}$}D\,\left(x\,\left(\frac{d^2}{d\,x^2}\,\rho\left(x , \tau\right)\right)+2\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)\right)-s\,\left(x\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)+\rho\left(x , \tau\right)\right)-M\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)-\frac{d}{d\,\tau}\,\rho\left(x , \tau\right)\]</div></div>
+\[\tag{${\it \%o}_{6}$}D\,\left(x\,\left(\frac{d^2}{d\,x^2}\,\rho\left(x , \tau\right)\right)+2\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)\right)-s\,\left(x\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)+\rho\left(x , \tau\right)\right)-M\,\left(\frac{d}{d\,x}\,\rho\left(x , \tau\right)\right)-\frac{d}{d\,\tau}\,\rho\left(x , \tau\right)\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>goodrho : %e^((s*x/D) / (1 - %e^(s*tau))) *
+    (%e^(s*tau) - 1)^(-M/D) * x^(M/D - 1);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{8}$}\frac{x^{\frac{M}{D}-1}\,e^{\frac{s\,x}{D\,\left(1-e^{s\,\tau}\right)}}}{\left(e^{s\,\tau}-1\right)^{\frac{M}{D}}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -949,15 +967,68 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{17}$}\left(1-e^ {- s\,\tau }\right)^{\frac{M}{D}-2}\,e^{-\frac{s\,e^ {- s\,\tau }\,x}{D\,\left(1-e^ {- s\,\tau }\right)}-s\,\tau}\]</div></div>
+\[\tag{${\it \%o}_{10}$}\left(1-e^ {- s\,\tau }\right)^{\frac{M}{D}-2}\,e^{-\frac{s\,e^ {- s\,\tau }\,x}{D\,\left(1-e^ {- s\,\tau }\right)}-s\,\tau}\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>oldrho : %e^(-(s * x * %e^(-s * tau) / D) / (1 - %e^(-s * tau))) *
+    %e^(-s * tau) * (1 - %e^(-s * tau))^(M/D - 2);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{12}$}\left(1-e^ {- s\,\tau }\right)^{\frac{M}{D}-2}\,e^{-\frac{s\,e^ {- s\,\tau }\,x}{D\,\left(1-e^ {- s\,\tau }\right)}-s\,\tau}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>newrho : %e^((s*x/D) / (1 - %e^(-s*tau))) *
+    (%e^(-s*tau) - 1)^(M/D) * x^(-1 - M/D);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{13}$}\left(e^ {- s\,\tau }-1\right)^{\frac{M}{D}}\,x^{-\frac{M}{D}-1}\,e^{\frac{s\,x}{D\,\left(1-e^ {- s\,\tau }\right)}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(difeqn(newrho));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{14}$}\frac{2\,\left(1-e^{s\,\tau}\right)^{\frac{M}{D}}\,x^{-\frac{M}{D}-2}\,\left(s^2\,e^{s\,\tau}\,x^2-M\,s\,e^{2\,s\,\tau}\,x+M\,s\,x+M^2\,e^{2\,s\,\tau}+D\,M\,e^{2\,s\,\tau}-2\,M^2\,e^{s\,\tau}-2\,D\,M\,e^{s\,\tau}+M^2+D\,M\right)\,e^{\frac{s\,e^{s\,\tau}\,x}{D\,e^{s\,\tau}-D}-\frac{M\,s\,\tau}{D}}}{D\,\left(e^{s\,\tau}-1\right)^2}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -966,12 +1037,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{28}$}0\]</div></div>
+\[\tag{${\it \%o}_{11}$}0\]</div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -1007,6 +1078,23 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
 \[\tag{${\it \%o}_{21}$}0\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(difeqn(goodrho));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{9}$}0\]</div></div>
 </div>
 </div>
 <div class="section" id="Homogeneous-inverse-Laplace-transform">
@@ -1323,7 +1411,7 @@ block([gf],
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/diffusion-approximation_genfunc-bid-diffapprox_67_0.svg" src="../_images/diffusion-approximation_genfunc-bid-diffapprox_67_0.svg" /></div>
+<img alt="../_images/diffusion-approximation_genfunc-bid-diffapprox_72_0.svg" src="../_images/diffusion-approximation_genfunc-bid-diffapprox_72_0.svg" /></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -1522,7 +1610,7 @@ block([mo],
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/diffusion-approximation_genfunc-bid-diffapprox_77_0.svg" src="../_images/diffusion-approximation_genfunc-bid-diffapprox_77_0.svg" /></div>
+<img alt="../_images/diffusion-approximation_genfunc-bid-diffapprox_82_0.svg" src="../_images/diffusion-approximation_genfunc-bid-diffapprox_82_0.svg" /></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1701,14 +1789,14 @@ wxplot2d(
     </div>
 
     <nav class="relbar">
-      <a class="previous" href="../index.html" aria-label="Previous topic" >
+      <a class="previous" href="bid-exact-diffusion-comparison.html" aria-label="Previous topic" >
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
         </div>
         <div class="title">
           <span class="text">
             <span class="direction">previous</span>
-            Analysis of the Birth-Immigration-Death process
+            Diffusion limit via generating function
           </span>
         </div>
       </a>
@@ -1733,7 +1821,9 @@ wxplot2d(
 
 <h3><a href="../index.html">Table of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Updated analysis</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="bid-exact-diffusion-comparison.html">Diffusion limit via generating function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bid-exact-diffusion-comparison.html#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process">Compute cumulants for exact and diffusion of the BD process</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Updated solution check for the diffusion approximation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Check-the-solution-to-the-characteristic-equation.">Check the solution to the characteristic equation.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Check-the-solution-for-the-cumulant-generating-function.">Check the solution for the cumulant generating function.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Find-the-characteristic-which-passes-through-a-given-point-(\theta_f,-\tau_f).">Find the characteristic which passes through a given point (<span class="math notranslate nohighlight">\(\theta_f\)</span>, <span class="math notranslate nohighlight">\(\tau_f\)</span>).</a></li>
