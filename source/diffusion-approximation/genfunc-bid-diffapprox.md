@@ -15,7 +15,7 @@ jupyter:
 <center><font size="+4">Generating function analysis of the diffusion approximation to the birth-immigration-death process</font></center>
 
 <!-- #region tags=[] -->
-# Updated analysis
+# Updated solution check for the diffusion approximation
 <!-- #endregion -->
 
 <!-- #region tags=[] -->
@@ -173,11 +173,30 @@ difeqn(rho(x,tau));
 ```
 
 ```maxima
+goodrho : %e^((s*x/D) / (1 - %e^(s*tau))) *
+    (%e^(s*tau) - 1)^(-M/D) * x^(M/D - 1);
+```
+
+```maxima tags=[]
 oldrho : %e^(-(s * x * %e^(-s * tau) / D) / (1 - %e^(-s * tau))) *
     %e^(-s * tau) * (1 - %e^(-s * tau))^(M/D - 2);
 ```
 
 ```maxima
+oldrho : %e^(-(s * x * %e^(-s * tau) / D) / (1 - %e^(-s * tau))) *
+    %e^(-s * tau) * (1 - %e^(-s * tau))^(M/D - 2);
+```
+
+```maxima
+newrho : %e^((s*x/D) / (1 - %e^(-s*tau))) *
+    (%e^(-s*tau) - 1)^(M/D) * x^(-1 - M/D);
+```
+
+```maxima
+factor(difeqn(newrho));
+```
+
+```maxima tags=[]
 factor(difeqn(oldrho));
 ```
 
@@ -188,6 +207,10 @@ oldrho : %e^(-(s * x * %e^(-s * tau) / D) / (1 - %e^(-s * tau))) *
 
 ```maxima
 factor(difeqn(oldrho));
+```
+
+```maxima
+factor(difeqn(goodrho));
 ```
 
 <!-- #region tags=[] -->
