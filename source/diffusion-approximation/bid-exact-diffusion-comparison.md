@@ -20,7 +20,7 @@ jupyter:
 
 Define the moment generating function.
 
-```maxima
+```maxima tags=[]
 genfunc (x, t, n0, kb, kd) := 
     ((kd * %e^(- (kb - kd) * t) - kd + 
         (kd - kb * %e^(- (kb - kd) * t)) * x) / 
@@ -30,13 +30,13 @@ genfunc (x, t, n0, kb, kd) :=
 
 Reparameterize it according to the diffusion approximation.
 
-```maxima
-factor(genfunc(%e^(-theta), tau*N, N * x0, D + s/(2*N), D - s/(2*N)));
+```maxima tags=[]
+genreparam : factor(genfunc(%e^(-theta), tau*N, N * x0, D + s/(2*N), D - s/(2*N)));
 ```
 
 Introduce epsilon = 1/N so as to make system size expansion.
 
-```maxima
+```maxima tags=[]
 geneps : genfunc(%e^(-theta * epsilon), tau / epsilon, 1, 
     D + s * epsilon/2, D - s* epsilon /2);
 ```
@@ -44,12 +44,37 @@ geneps : genfunc(%e^(-theta * epsilon), tau / epsilon, 1,
 Expand the cumulant generating function.
 
 ```maxima tags=[]
-(x0/epsilon)*taylor(log(geneps), epsilon, 0, 3);
+cgfexpansion : (x0/epsilon)*taylor(log(geneps), epsilon, 0, 3);
+```
+
+```maxima
+coeff(cgfexpansion, epsilon, 0);
+```
+
+```maxima
+texput(theta, "\\theta");
+texput(tau, "(\\tau - \\tau_{0})");
+```
+
+```maxima
+tex(genreparam);
+```
+
+```maxima
+tex(factor(coeff(cgfexpansion, epsilon, 0)));
+```
+
+```maxima
+tex(factor(coeff(cgfexpansion, epsilon, 2)));
+```
+
+```maxima
+tex(factor(coeff(cgfexpansion, epsilon, 4)));
 ```
 
 # Compute cumulants for exact and diffusion of the BD process
 
-```maxima
+```maxima tags=[]
 numop(n, gf) := 
     if n=0 then gf
         else numop(n-1, z * diff(gf, z))$
@@ -58,7 +83,7 @@ cumu(m, t, n0, kb, kd) :=
             log(genfunc(z, t, n0, kb, kd)))))$
 ```
 
-```maxima
+```maxima tags=[]
 cumu(0, t, n0, kb, kd);
 ```
 
@@ -68,6 +93,8 @@ cumu(2, t, n0, kb, kd);
 cumu(3, t, n0, kb, kd);
 cumu(4, t, n0, kb, kd);
 ```
+
+## First order terms
 
 ```maxima tags=[]
 difcum1 : taylor(epsilon * cumu(1, t / epsilon, x0 / epsilon, 
@@ -102,7 +129,21 @@ difcum4 : subst(0, epsilon, epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
         D + s * epsilon / 2, D - s * epsilon / 2));
 ```
 
-```maxima
+<!-- #region tags=[] -->
+## Second order terms
+<!-- #endregion -->
+
+```maxima tags=[]
+factor(coeff(difcum3, epsilon, 2));
+```
+
+```maxima tags=[]
+factor(coeff(difcum4, epsilon, 2));
+```
+
+## Relations among terms
+
+```maxima tags=[]
 factor(2 * difcum3 * difcum1 - 3 * difcum2^2);
 factor(difcum4 * difcum1^2 - 3 * difcum2^3 );
 ```
