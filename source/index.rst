@@ -9,5 +9,6 @@
    :maxdepth: 4
    :glob:
    
-   diffusion-approximation/*
+   diffusion-approximation/genfunc-bid-diffapprox
+   diffusion-approximation/bid-exact-diffusion-comparison
    references
