@@ -10,5 +10,6 @@
    :glob:
    
    diffusion-approximation/genfunc-bid-diffapprox
+   diffusion-approximation/bid-diffusion-solution
    diffusion-approximation/bid-exact-diffusion-comparison
    references
