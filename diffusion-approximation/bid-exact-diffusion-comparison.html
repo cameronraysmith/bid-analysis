@@ -24,8 +24,8 @@
     <script defer src="../_static/insipid-sidebar.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Updated solution check for the diffusion approximation" href="genfunc-bid-diffapprox.html" />
-    <link rel="prev" title="Analysis of the Birth-Immigration-Death process" href="../index.html" />
+    <link rel="next" title="References" href="../references.html" />
+    <link rel="prev" title="Forward Laplace transform" href="bid-diffusion-solution.html" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
   </head>
@@ -84,31 +84,31 @@
       </div>
     </header>
     <nav>
-      <a href="../index.html" class="nav-icon previous" title="previous:&#13;Analysis of the Birth-Immigration-Death process" aria-label="Previous topic" accesskey="P" tabindex="-1">
+      <a href="bid-diffusion-solution.html" class="nav-icon previous" title="previous:&#13;Forward Laplace transform" aria-label="Previous topic" accesskey="P" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
       </a>
-      <a href="genfunc-bid-diffapprox.html" class="nav-icon next" title="next:&#13;Updated solution check for the diffusion approximation" aria-label="Next topic" accesskey="N" tabindex="-1">
+      <a href="../references.html" class="nav-icon next" title="next:&#13;References" aria-label="Next topic" accesskey="N" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
       </a>
     </nav>
 
     <nav class="relbar">
-      <a class="previous" href="../index.html" aria-label="Previous topic" >
+      <a class="previous" href="bid-diffusion-solution.html" aria-label="Previous topic" >
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
         </div>
         <div class="title">
           <span class="text">
             <span class="direction">previous</span>
-            Analysis of the Birth-Immigration-Death process
+            Forward Laplace transform
           </span>
         </div>
       </a>
-      <a class="next" href="genfunc-bid-diffapprox.html" aria-label="Next topic" >
+      <a class="next" href="../references.html" aria-label="Next topic" >
         <div class="title">
           <span class="text">
             <span class="direction">next</span>
-            Updated solution check for the diffusion approximation
+            References
           </span>
         </div>
         <div class="icon">
@@ -413,25 +413,25 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>Reparameterize it according to the diffusion approximation.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>factor(genfunc(%e^(-theta), tau*N, N * x0, D + s/(2*N), D - s/(2*N)));
+<span></span>genreparam : factor(genfunc(%e^(-theta), tau*N, N * x0, D + s/(2*N), D - s/(2*N)));
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{68}$}\left(-\frac{\left(\left(s-2\,D\,N\right)\,e^{s\,\tau}-s+2\,D\,N\right)\,e^{\vartheta}+\left(2\,D\,N-s\right)\,e^{s\,\tau}-s-2\,D\,N}{\left(\left(s+2\,D\,N\right)\,e^{s\,\tau}+s-2\,D\,N\right)\,e^{\vartheta}+\left(-s-2\,D\,N\right)\,e^{s\,\tau}+s+2\,D\,N}\right)^{N\,x_{0}}\]</div></div>
+\[\tag{${\it \%o}_{28}$}\left(-\frac{\left(\left(s-2\,D\,N\right)\,e^{s\,\tau}-s+2\,D\,N\right)\,e^{\vartheta}+\left(2\,D\,N-s\right)\,e^{s\,\tau}-s-2\,D\,N}{\left(\left(s+2\,D\,N\right)\,e^{s\,\tau}+s-2\,D\,N\right)\,e^{\vartheta}+\left(-s-2\,D\,N\right)\,e^{s\,\tau}+s+2\,D\,N}\right)^{N\,x_{0}}\]</div></div>
 </div>
 <p>Introduce epsilon = 1/N so as to make system size expansion.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -441,36 +441,99 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{69}$}\frac{\left(-\left(\frac{\varepsilon\,s}{2}+D\right)\,e^ {- s\,\tau }-\frac{\varepsilon\,s}{2}+D\right)\,e^ {- \varepsilon\,\vartheta }+\left(D-\frac{\varepsilon\,s}{2}\right)\,e^ {- s\,\tau }+\frac{\varepsilon\,s}{2}-D}{\left(-\left(\frac{\varepsilon\,s}{2}+D\right)\,e^ {- s\,\tau }+\frac{\varepsilon\,s}{2}+D\right)\,e^ {- \varepsilon\,\vartheta }+\left(D-\frac{\varepsilon\,s}{2}\right)\,e^ {- s\,\tau }-\frac{\varepsilon\,s}{2}-D}\]</div></div>
+\[\tag{${\it \%o}_{29}$}\frac{\left(-\left(\frac{\varepsilon\,s}{2}+D\right)\,e^ {- s\,\tau }-\frac{\varepsilon\,s}{2}+D\right)\,e^ {- \varepsilon\,\vartheta }+\left(D-\frac{\varepsilon\,s}{2}\right)\,e^ {- s\,\tau }+\frac{\varepsilon\,s}{2}-D}{\left(-\left(\frac{\varepsilon\,s}{2}+D\right)\,e^ {- s\,\tau }+\frac{\varepsilon\,s}{2}+D\right)\,e^ {- \varepsilon\,\vartheta }+\left(D-\frac{\varepsilon\,s}{2}\right)\,e^ {- s\,\tau }-\frac{\varepsilon\,s}{2}-D}\]</div></div>
 </div>
 <p>Expand the cumulant generating function.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>(x0/epsilon)*taylor(log(geneps), epsilon, 0, 3);
+<span></span>cgfexpansion : (x0/epsilon)*taylor(log(geneps), epsilon, 0, 3);
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{72}$}-\frac{s\,e^{s\,\tau}\,\vartheta\,x_{0}}{D\,e^{s\,\tau}\,\vartheta-D\,\vartheta+s}-\frac{\varepsilon^2\,\left(s^2\,\left(D\,e^{s\,\tau}\,\vartheta^4-D\,e^{2\,s\,\tau}\,\vartheta^4\right)+s^3\,\left(e^{3\,s\,\tau}\,\vartheta^3-e^{s\,\tau}\,\vartheta^3\right)\right)\,x_{0}}{12\,D^3\,e^{3\,s\,\tau}\,\vartheta^3-36\,D^3\,e^{2\,s\,\tau}\,\vartheta^3+36\,D^3\,e^{s\,\tau}\,\vartheta^3-12\,D^3\,\vartheta^3+s\,\left(36\,D^2\,e^{2\,s\,\tau}\,\vartheta^2-72\,D^2\,e^{s\,\tau}\,\vartheta^2+36\,D^2\,\vartheta^2\right)+s^2\,\left(36\,D\,e^{s\,\tau}\,\vartheta-36\,D\,\vartheta\right)+12\,s^3}\]</div></div>
+\[\tag{${\it \%o}_{30}$}-\frac{s\,e^{s\,\tau}\,\vartheta\,x_{0}}{D\,e^{s\,\tau}\,\vartheta-D\,\vartheta+s}-\frac{\varepsilon^2\,\left(s^2\,\left(D\,e^{s\,\tau}\,\vartheta^4-D\,e^{2\,s\,\tau}\,\vartheta^4\right)+s^3\,\left(e^{3\,s\,\tau}\,\vartheta^3-e^{s\,\tau}\,\vartheta^3\right)\right)\,x_{0}}{12\,D^3\,e^{3\,s\,\tau}\,\vartheta^3-36\,D^3\,e^{2\,s\,\tau}\,\vartheta^3+36\,D^3\,e^{s\,\tau}\,\vartheta^3-12\,D^3\,\vartheta^3+s\,\left(36\,D^2\,e^{2\,s\,\tau}\,\vartheta^2-72\,D^2\,e^{s\,\tau}\,\vartheta^2+36\,D^2\,\vartheta^2\right)+s^2\,\left(36\,D\,e^{s\,\tau}\,\vartheta-36\,D\,\vartheta\right)+12\,s^3}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>coeff(cgfexpansion, epsilon, 0);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{31}$}-\frac{s\,e^{s\,\tau}\,\vartheta\,x_{0}}{D\,e^{s\,\tau}\,\vartheta-D\,\vartheta+s}\]</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>texput(theta, &quot;\\theta&quot;);
+texput(tau, &quot;(\\tau - \\tau_{0})&quot;);
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>tex(genreparam);
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>tex(factor(coeff(cgfexpansion, epsilon, 0)));
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>tex(factor(coeff(cgfexpansion, epsilon, 2)));
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>tex(factor(coeff(cgfexpansion, epsilon, 4)));
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="Compute-cumulants-for-exact-and-diffusion-of-the-BD-process">
 <h1>Compute cumulants for exact and diffusion of the BD process<a class="headerlink" href="#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -498,10 +561,10 @@ cumu(m, t, n0, kb, kd) :=
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{22}$}0\]</div></div>
+\[\tag{${\it \%o}_{9}$}0\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -513,39 +576,41 @@ cumu(4, t, n0, kb, kd);
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{64}$}n_{0}\,e^{{\it kb}\,t-{\it kd}\,t}\]</div></div>
+\[\tag{${\it \%o}_{10}$}n_{0}\,e^{{\it kb}\,t-{\it kd}\,t}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{65}$}\frac{\left({\it kd}+{\it kb}\right)\,n_{0}\,\left(e^{{\it kd}\,t}-e^{{\it kb}\,t}\right)\,e^{{\it kb}\,t-2\,{\it kd}\,t}}{{\it kd}-{\it kb}}\]</div></div>
+\[\tag{${\it \%o}_{11}$}\frac{\left({\it kd}+{\it kb}\right)\,n_{0}\,\left(e^{{\it kd}\,t}-e^{{\it kb}\,t}\right)\,e^{{\it kb}\,t-2\,{\it kd}\,t}}{{\it kd}-{\it kb}}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{66}$}\frac{n_{0}\,\left(e^{{\it kd}\,t}-e^{{\it kb}\,t}\right)\,\left({\it kd}^2\,e^{{\it kd}\,t}+4\,{\it kb}\,{\it kd}\,e^{{\it kd}\,t}+{\it kb}^2\,e^{{\it kd}\,t}-2\,{\it kd}^2\,e^{{\it kb}\,t}-2\,{\it kb}\,{\it kd}\,e^{{\it kb}\,t}-2\,{\it kb}^2\,e^{{\it kb}\,t}\right)\,e^{{\it kb}\,t-3\,{\it kd}\,t}}{\left({\it kd}-{\it kb}\right)^2}\]</div></div>
+\[\tag{${\it \%o}_{12}$}\frac{n_{0}\,\left(e^{{\it kd}\,t}-e^{{\it kb}\,t}\right)\,\left({\it kd}^2\,e^{{\it kd}\,t}+4\,{\it kb}\,{\it kd}\,e^{{\it kd}\,t}+{\it kb}^2\,e^{{\it kd}\,t}-2\,{\it kd}^2\,e^{{\it kb}\,t}-2\,{\it kb}\,{\it kd}\,e^{{\it kb}\,t}-2\,{\it kb}^2\,e^{{\it kb}\,t}\right)\,e^{{\it kb}\,t-3\,{\it kd}\,t}}{\left({\it kd}-{\it kb}\right)^2}\]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{67}$}\frac{\left({\it kd}+{\it kb}\right)\,n_{0}\,\left(e^{{\it kd}\,t}-e^{{\it kb}\,t}\right)\,e^{{\it kb}\,t-4\,{\it kd}\,t}\,\left(-6\,{\it kd}^2\,e^{{\it kd}\,t+{\it kb}\,t}-12\,{\it kb}\,{\it kd}\,e^{{\it kd}\,t+{\it kb}\,t}-6\,{\it kb}^2\,e^{{\it kd}\,t+{\it kb}\,t}+{\it kd}^2\,e^{2\,{\it kd}\,t}+10\,{\it kb}\,{\it kd}\,e^{2\,{\it kd}\,t}+{\it kb}^2\,e^{2\,{\it kd}\,t}+6\,{\it kd}^2\,e^{2\,{\it kb}\,t}+6\,{\it kb}^2\,e^{2\,{\it kb}\,t}\right)}{\left({\it kd}-{\it kb}\right)^3}\]</div></div>
+\[\tag{${\it \%o}_{13}$}\frac{\left({\it kd}+{\it kb}\right)\,n_{0}\,\left(e^{{\it kd}\,t}-e^{{\it kb}\,t}\right)\,e^{{\it kb}\,t-4\,{\it kd}\,t}\,\left(-6\,{\it kd}^2\,e^{{\it kd}\,t+{\it kb}\,t}-12\,{\it kb}\,{\it kd}\,e^{{\it kd}\,t+{\it kb}\,t}-6\,{\it kb}^2\,e^{{\it kd}\,t+{\it kb}\,t}+{\it kd}^2\,e^{2\,{\it kd}\,t}+10\,{\it kb}\,{\it kd}\,e^{2\,{\it kd}\,t}+{\it kb}^2\,e^{2\,{\it kd}\,t}+6\,{\it kd}^2\,e^{2\,{\it kb}\,t}+6\,{\it kb}^2\,e^{2\,{\it kb}\,t}\right)}{\left({\it kd}-{\it kb}\right)^3}\]</div></div>
 </div>
+<div class="section" id="First-order-terms">
+<h2>First order terms<a class="headerlink" href="#First-order-terms" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -561,39 +626,39 @@ difcum4 : taylor(epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{48}$}e^{s\,t}\,x_{0}\]</div></div>
+\[\tag{${\it \%o}_{42}$}e^{s\,t}\,x_{0}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{49}$}\frac{\left(2\,D\,e^{2\,s\,t}-2\,D\,e^{s\,t}\right)\,x_{0}}{s}\]</div></div>
+\[\tag{${\it \%o}_{43}$}\frac{\left(2\,D\,e^{2\,s\,t}-2\,D\,e^{s\,t}\right)\,x_{0}}{s}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{50}$}\frac{\left(6\,D^2\,e^{3\,s\,t}-12\,D^2\,e^{2\,s\,t}+6\,D^2\,e^{s\,t}\right)\,x_{0}}{s^2}+\frac{\varepsilon^2\,\left(e^{3\,s\,t}-e^{s\,t}\right)\,x_{0}}{2}\]</div></div>
+\[\tag{${\it \%o}_{44}$}\frac{\left(6\,D^2\,e^{3\,s\,t}-12\,D^2\,e^{2\,s\,t}+6\,D^2\,e^{s\,t}\right)\,x_{0}}{s^2}+\frac{\varepsilon^2\,\left(e^{3\,s\,t}-e^{s\,t}\right)\,x_{0}}{2}\]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{51}$}\frac{\left(24\,D^3\,e^{4\,s\,t}-72\,D^3\,e^{3\,s\,t}+72\,D^3\,e^{2\,s\,t}-24\,D^3\,e^{s\,t}\right)\,x_{0}}{s^3}+\frac{\varepsilon^2\,\left(6\,D\,e^{4\,s\,t}-6\,D\,e^{3\,s\,t}-4\,D\,e^{2\,s\,t}+4\,D\,e^{s\,t}\right)\,x_{0}}{s}\]</div></div>
+\[\tag{${\it \%o}_{45}$}\frac{\left(24\,D^3\,e^{4\,s\,t}-72\,D^3\,e^{3\,s\,t}+72\,D^3\,e^{2\,s\,t}-24\,D^3\,e^{s\,t}\right)\,x_{0}}{s^3}+\frac{\varepsilon^2\,\left(6\,D\,e^{4\,s\,t}-6\,D\,e^{3\,s\,t}-4\,D\,e^{2\,s\,t}+4\,D\,e^{s\,t}\right)\,x_{0}}{s}\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -609,39 +674,39 @@ difcum4first : factor(taylor(epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{40}$}e^{s\,t}\,x_{0}\]</div></div>
+\[\tag{${\it \%o}_{18}$}e^{s\,t}\,x_{0}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{41}$}\frac{2\,D\,\left(e^{s\,t}-1\right)\,e^{s\,t}\,x_{0}}{s}\]</div></div>
+\[\tag{${\it \%o}_{19}$}\frac{2\,D\,\left(e^{s\,t}-1\right)\,e^{s\,t}\,x_{0}}{s}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{42}$}\frac{6\,D^2\,\left(e^{s\,t}-1\right)^2\,e^{s\,t}\,x_{0}}{s^2}\]</div></div>
+\[\tag{${\it \%o}_{20}$}\frac{6\,D^2\,\left(e^{s\,t}-1\right)^2\,e^{s\,t}\,x_{0}}{s^2}\]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{43}$}\frac{24\,D^3\,\left(e^{s\,t}-1\right)^3\,e^{s\,t}\,x_{0}}{s^3}\]</div></div>
+\[\tag{${\it \%o}_{21}$}\frac{24\,D^3\,\left(e^{s\,t}-1\right)^3\,e^{s\,t}\,x_{0}}{s^3}\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -657,39 +722,79 @@ difcum4 : subst(0, epsilon, epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{31}$}e^{s\,t}\,x_{0}\]</div></div>
+\[\tag{${\it \%o}_{22}$}e^{s\,t}\,x_{0}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{32}$}\frac{2\,D\,\left(e^{s\,t}-1\right)\,e^{s\,t}\,x_{0}}{s}\]</div></div>
+\[\tag{${\it \%o}_{23}$}\frac{2\,D\,\left(e^{s\,t}-1\right)\,e^{s\,t}\,x_{0}}{s}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{33}$}\frac{\left(e^{s\,t}-1\right)\,e^{s\,t}\,\left(12\,D^2\,e^{s\,t}-12\,D^2\right)\,x_{0}}{2\,s^2}\]</div></div>
+\[\tag{${\it \%o}_{24}$}\frac{\left(e^{s\,t}-1\right)\,e^{s\,t}\,\left(12\,D^2\,e^{s\,t}-12\,D^2\right)\,x_{0}}{2\,s^2}\]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{34}$}\frac{2\,D\,\left(e^{s\,t}-1\right)\,e^{s\,t}\,\left(12\,D^2\,e^{2\,s\,t}-24\,D^2\,e^{s\,t}+12\,D^2\right)\,x_{0}}{s^3}\]</div></div>
+\[\tag{${\it \%o}_{25}$}\frac{2\,D\,\left(e^{s\,t}-1\right)\,e^{s\,t}\,\left(12\,D^2\,e^{2\,s\,t}-24\,D^2\,e^{s\,t}+12\,D^2\right)\,x_{0}}{s^3}\]</div></div>
+</div>
+</div>
+<div class="section" id="Second-order-terms">
+<h2>Second order terms<a class="headerlink" href="#Second-order-terms" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(coeff(difcum3, epsilon, 2));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{46}$}\frac{\left(e^{s\,t}-1\right)\,e^{s\,t}\,\left(e^{s\,t}+1\right)\,x_{0}}{2}\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(coeff(difcum4, epsilon, 2));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{47}$}\frac{2\,D\,\left(e^{s\,t}-1\right)\,e^{s\,t}\,\left(3\,e^{2\,s\,t}-2\right)\,x_{0}}{s}\]</div></div>
+</div>
+</div>
+<div class="section" id="Relations-among-terms">
+<h2>Relations among terms<a class="headerlink" href="#Relations-among-terms" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -699,20 +804,430 @@ factor(difcum4 * difcum1^2 - 3 * difcum2^3 );
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{20}$}0\]</div></div>
+\[\tag{${\it \%o}_{26}$}0\]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{21}$}0\]</div></div>
+\[\tag{${\it \%o}_{27}$}0\]</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Compute-cumulants-for-inhomogeneous-component-of-BID-process">
+<h1>Compute cumulants for inhomogeneous component of BID process<a class="headerlink" href="#Compute-cumulants-for-inhomogeneous-component-of-BID-process" title="Permalink to this headline">¶</a></h1>
+<p>Cumulant generating function for inhomogenous equation.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>frac1 : (kb - kd * %e^(-(kb-kd)*t)) / ((kb - kd) * %e^(-(kb-kd)*t));
+frac2 : (kb - kb * %e^(-(kb-kd)*t)) / (kb - kd * %e^(-(kb-kd)*t));
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{18}$}\frac{e^ {- \left({\it kd}-{\it kb}\right)\,t }\,\left({\it kb}-{\it kd}\,e^{\left({\it kd}-{\it kb}\right)\,t}\right)}{{\it kb}-{\it kd}}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{19}$}\frac{{\it kb}-{\it kb}\,e^{\left({\it kd}-{\it kb}\right)\,t}}{{\it kb}-{\it kd}\,e^{\left({\it kd}-{\it kb}\right)\,t}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>inhfrac : frac1 * (1 - frac2 * %e^(theta * epsilon));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{20}$}\frac{e^ {- \left({\it kd}-{\it kb}\right)\,t }\,\left({\it kb}-{\it kd}\,e^{\left({\it kd}-{\it kb}\right)\,t}\right)\,\left(1-\frac{\left({\it kb}-{\it kb}\,e^{\left({\it kd}-{\it kb}\right)\,t}\right)\,e^{\varepsilon\,\theta}}{{\it kb}-{\it kd}\,e^{\left({\it kd}-{\it kb}\right)\,t}}\right)}{{\it kb}-{\it kd}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac1);
+psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac2);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{21}$}\frac{N\,\left(-\left(D-\frac{s}{2\,N}\right)\,e^ {- s\,\tau }+\frac{s}{2\,N}+D\right)\,e^{s\,\tau}}{s}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{22}$}\frac{-\left(\frac{s}{2\,N}+D\right)\,e^ {- s\,\tau }+\frac{s}{2\,N}+D}{-\left(D-\frac{s}{2\,N}\right)\,e^ {- s\,\tau }+\frac{s}{2\,N}+D}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], inhfrac);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{23}$}\frac{N\,\left(-\left(D-\frac{s}{2\,N}\right)\,e^ {- s\,\tau }+\frac{s}{2\,N}+D\right)\,e^{s\,\tau}\,\left(1-\frac{\left(-\left(\frac{s}{2\,N}+D\right)\,e^ {- s\,\tau }+\frac{s}{2\,N}+D\right)\,e^{\varepsilon\,\theta}}{-\left(D-\frac{s}{2\,N}\right)\,e^ {- s\,\tau }+\frac{s}{2\,N}+D}\right)}{s}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>inhgenf : psubst([kb = D + s * epsilon/2, kd = D - s * epsilon/2,
+         t = tau/epsilon], (M/kb) * log(inhfrac));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{24}$}\frac{M\,\log \left(\frac{\left(-\left(D-\frac{\varepsilon\,s}{2}\right)\,e^ {- s\,\tau }+\frac{\varepsilon\,s}{2}+D\right)\,e^{s\,\tau}\,\left(1-\frac{\left(-\left(\frac{\varepsilon\,s}{2}+D\right)\,e^ {- s\,\tau }+\frac{\varepsilon\,s}{2}+D\right)\,e^{\varepsilon\,\theta}}{-\left(D-\frac{\varepsilon\,s}{2}\right)\,e^ {- s\,\tau }+\frac{\varepsilon\,s}{2}+D}\right)}{\varepsilon\,s}\right)}{\frac{\varepsilon\,s}{2}+D}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>inhgenser : taylor(psubst([kb = D + s * epsilon/2, kd = D - s * epsilon/2,
+         t = tau/epsilon], (M/kb) * log(inhfrac)), epsilon, 0, 2);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{27}$}\frac{\varepsilon^2\,\left(D\,M\,s^3\,\left(\theta\,\left(12\,\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)-12\,\log s-6\right)+e^{s\,\tau}\,\theta\,\left(-12\,\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)+12\,\log s+6\right)\right)+D^2\,M\,s^2\,\left(e^{2\,s\,\tau}\,\theta^2\,\left(6\,\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)-6\,\log s-9\right)+\theta^2\,\left(6\,\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)-6\,\log s-9\right)+e^{s\,\tau}\,\theta^2\,\left(-12\,\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)+12\,\log s+18\right)\right)+M\,s^4\,\left(6\,\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)-6\,\log s\right)+D^4\,M\,\left(e^{2\,s\,\tau}\,\theta^4-2\,e^{s\,\tau}\,\theta^4+\theta^4\right)+D^3\,M\,s\,\left(-6\,e^{2\,s\,\tau}\,\theta^3+8\,e^{s\,\tau}\,\theta^3-2\,\theta^3\right)\right)}{D^5\,\left(24\,e^{2\,s\,\tau}\,\theta^2-48\,e^{s\,\tau}\,\theta^2+24\,\theta^2\right)+D^4\,s\,\left(48\,\theta-48\,e^{s\,\tau}\,\theta\right)+24\,D^3\,s^2}-\frac{\varepsilon\,\left(D\,M\,s\,\left(\theta\,\left(\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)-\log s-1\right)+e^{s\,\tau}\,\theta\,\left(-\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)+\log s+1\right)\right)+M\,s^2\,\left(\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)-\log s\right)+D^2\,M\,\left(e^{s\,\tau}\,\theta^2-\theta^2\right)\right)}{D^3\,\left(2\,\theta-2\,e^{s\,\tau}\,\theta\right)+2\,D^2\,s}+\frac{M\,\left(\log \left(\left(D-D\,e^{s\,\tau}\right)\,\theta+s\right)-\log s\right)}{D}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>logcontract(coeff(inhgenser, epsilon, 0));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{28}$}\frac{M\,\log \left(-\frac{\left(D\,e^{s\,\tau}-D\right)\,\theta-s}{s}\right)}{D}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>logcontract(coeff(inhgenser, epsilon, 1));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{29}$}\frac{\theta\,\left(D\,M\,s\,e^{s\,\tau}\,\left(\log \left(-\frac{s}{\left(D\,e^{s\,\tau}-D\right)\,\theta-s}\right)+1\right)+D\,M\,s\,\left(\log \left(-\frac{\left(D\,e^{s\,\tau}-D\right)\,\theta-s}{s}\right)-1\right)\right)+M\,s^2\,\log \left(-\frac{\left(D\,e^{s\,\tau}-D\right)\,\theta-s}{s}\right)+\left(D^2\,M\,e^{s\,\tau}-D^2\,M\right)\,\theta^2}{\left(2\,D^3\,e^{s\,\tau}-2\,D^3\right)\,\theta-2\,D^2\,s}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>expand(logcontract(coeff(inhgenser, epsilon, 1)));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{30}$}\frac{D\,M\,s\,e^{s\,\tau}\,\theta\,\log \left(-\frac{s}{D\,e^{s\,\tau}\,\theta-D\,\theta-s}\right)}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}+\frac{D\,M\,s\,\theta\,\log \left(-\frac{D\,e^{s\,\tau}\,\theta}{s}+\frac{D\,\theta}{s}+1\right)}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}+\frac{M\,s^2\,\log \left(-\frac{D\,e^{s\,\tau}\,\theta}{s}+\frac{D\,\theta}{s}+1\right)}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}+\frac{D^2\,M\,e^{s\,\tau}\,\theta^2}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}-\frac{D^2\,M\,\theta^2}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}+\frac{D\,M\,s\,e^{s\,\tau}\,\theta}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}-\frac{D\,M\,s\,\theta}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>piece1 : (D*M*s*%e^(s*tau)*theta*log(-s/(D*%e^(s*tau)*theta-D*theta-s)))/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)+(D*M*s*theta*log(-(D*%e^(s*tau)*theta)/s+(D*theta)/s+1))/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)+(M*s^2*log(-(D*%e^(s*tau)*theta)/s+(D*theta)/s+1))/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s);
+piece2 : (D^2*M*%e^(s*tau)*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)-(D^2*M*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)+(D*M*s*%e^(s*tau)*theta)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)-(D*M*s*theta)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{31}$}\frac{D\,M\,s\,e^{s\,\tau}\,\theta\,\log \left(-\frac{s}{D\,e^{s\,\tau}\,\theta-D\,\theta-s}\right)}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}+\frac{D\,M\,s\,\theta\,\log \left(-\frac{D\,e^{s\,\tau}\,\theta}{s}+\frac{D\,\theta}{s}+1\right)}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}+\frac{M\,s^2\,\log \left(-\frac{D\,e^{s\,\tau}\,\theta}{s}+\frac{D\,\theta}{s}+1\right)}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{32}$}\frac{D^2\,M\,e^{s\,\tau}\,\theta^2}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}-\frac{D^2\,M\,\theta^2}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}+\frac{D\,M\,s\,e^{s\,\tau}\,\theta}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}-\frac{D\,M\,s\,\theta}{2\,D^3\,e^{s\,\tau}\,\theta-2\,D^3\,\theta-2\,D^2\,s}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(piece1);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{33}$}\frac{M\,s\,\left(D\,e^{s\,\tau}\,\theta\,\log \left(-\frac{s}{\left(D\,e^{s\,\tau}-D\right)\,\theta-s}\right)+D\,\theta\,\log \left(-\frac{\left(D\,e^{s\,\tau}-D\right)\,\theta-s}{s}\right)+s\,\log \left(-\frac{\left(D\,e^{s\,\tau}-D\right)\,\theta-s}{s}\right)\right)}{2\,D^2\,\left(D\,e^{s\,\tau}\,\theta-D\,\theta-s\right)}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(piece2);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{34}$}\frac{M\,\left(e^{s\,\tau}-1\right)\,\theta\,\left(D\,\theta+s\right)}{2\,D\,\left(D\,e^{s\,\tau}\,\theta-D\,\theta-s\right)}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>(M*s/(2*D^2*(D*%e^(s*tau)*theta-D*theta-s))) *
+(- D * %e^(s*\tau) * theta + D*theta + s);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{35}$}\frac{M\,s\,\left(-D\,e^{s\,\tau}\,\theta+D\,\theta+s\right)}{2\,D^2\,\left(D\,e^{s\,\tau}\,\theta-D\,\theta-s\right)}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor((M*s/(2*D^2*(D*%e^(s*tau)*theta-D*theta-s))) *
+(- D * %e^(s*\tau) * theta + D*theta + s));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{36}$}-\frac{M\,s}{2\,D^2}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>inhgenexpanded : expand(taylor(inhgenser, theta, 0, 4));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{37}$}-\frac{3\,D\,M\,\varepsilon^2\,e^{4\,s\,\tau}\,\theta^4}{16\,s^2}-\frac{3\,D^2\,M\,\varepsilon\,e^{4\,s\,\tau}\,\theta^4}{8\,s^3}-\frac{D^3\,M\,e^{4\,s\,\tau}\,\theta^4}{4\,s^4}+\frac{D\,M\,\varepsilon^2\,e^{3\,s\,\tau}\,\theta^4}{4\,s^2}+\frac{D^2\,M\,\varepsilon\,e^{3\,s\,\tau}\,\theta^4}{s^3}+\frac{D^3\,M\,e^{3\,s\,\tau}\,\theta^4}{s^4}+\frac{D\,M\,\varepsilon^2\,e^{2\,s\,\tau}\,\theta^4}{12\,s^2}-\frac{3\,D^2\,M\,\varepsilon\,e^{2\,s\,\tau}\,\theta^4}{4\,s^3}-\frac{3\,D^3\,M\,e^{2\,s\,\tau}\,\theta^4}{2\,s^4}-\frac{D\,M\,\varepsilon^2\,e^{s\,\tau}\,\theta^4}{6\,s^2}+\frac{D^3\,M\,e^{s\,\tau}\,\theta^4}{s^4}+\frac{D\,M\,\varepsilon^2\,\theta^4}{48\,s^2}+\frac{D^2\,M\,\varepsilon\,\theta^4}{8\,s^3}-\frac{D^3\,M\,\theta^4}{4\,s^4}-\frac{M\,\varepsilon^2\,e^{3\,s\,\tau}\,\theta^3}{12\,s}-\frac{D\,M\,\varepsilon\,e^{3\,s\,\tau}\,\theta^3}{3\,s^2}-\frac{D^2\,M\,e^{3\,s\,\tau}\,\theta^3}{3\,s^3}+\frac{D\,M\,\varepsilon\,e^{2\,s\,\tau}\,\theta^3}{2\,s^2}+\frac{D^2\,M\,e^{2\,s\,\tau}\,\theta^3}{s^3}+\frac{M\,\varepsilon^2\,e^{s\,\tau}\,\theta^3}{12\,s}-\frac{D^2\,M\,e^{s\,\tau}\,\theta^3}{s^3}-\frac{D\,M\,\varepsilon\,\theta^3}{6\,s^2}+\frac{D^2\,M\,\theta^3}{3\,s^3}-\frac{M\,\varepsilon\,e^{2\,s\,\tau}\,\theta^2}{4\,s}-\frac{D\,M\,e^{2\,s\,\tau}\,\theta^2}{2\,s^2}+\frac{D\,M\,e^{s\,\tau}\,\theta^2}{s^2}+\frac{M\,\varepsilon\,\theta^2}{4\,s}-\frac{D\,M\,\theta^2}{2\,s^2}-\frac{M\,e^{s\,\tau}\,\theta}{s}+\frac{M\,\theta}{s}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>kap1 : factor(coeff(inhgenexpanded, theta, 1));
+kap2 : factor(coeff(coeff(inhgenexpanded, theta, 2), epsilon, 0)) +
+    (1/N) * factor(coeff(coeff(inhgenexpanded, theta, 2), epsilon, 1));
+kap3 : factor(coeff(coeff(inhgenexpanded, theta, 3), epsilon, 0)) +
+    (1/N) * factor(coeff(coeff(inhgenexpanded, theta, 3), epsilon, 1));
+kap4 : factor(coeff(coeff(inhgenexpanded, theta, 4), epsilon, 0)) +
+    (1/N) * factor(coeff(coeff(inhgenexpanded, theta, 4), epsilon, 1));
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{38}$}-\frac{M\,\left(e^{s\,\tau}-1\right)}{s}\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{39}$}-\frac{M\,\left(e^{s\,\tau}-1\right)\,\left(e^{s\,\tau}+1\right)}{4\,N\,s}-\frac{D\,M\,\left(e^{s\,\tau}-1\right)^2}{2\,s^2}\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{40}$}-\frac{D\,M\,\left(e^{s\,\tau}-1\right)^2\,\left(2\,e^{s\,\tau}+1\right)}{6\,N\,s^2}-\frac{D^2\,M\,\left(e^{s\,\tau}-1\right)^3}{3\,s^3}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{41}$}-\frac{D^2\,M\,\left(e^{s\,\tau}-1\right)^3\,\left(3\,e^{s\,\tau}+1\right)}{8\,N\,s^3}-\frac{D^3\,M\,\left(e^{s\,\tau}-1\right)^4}{4\,s^4}\]</div></div>
+</div>
+</div>
+<div class="section" id="Compare-exact-and-approximate-cumulants">
+<h1>Compare exact and approximate cumulants<a class="headerlink" href="#Compare-exact-and-approximate-cumulants" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>kap2 (D, tau, epsilon) := 2* D * (1 - %e^(-tau));
+kap3 (D, tau, epsilon) := 6* D^2 * (1 - %e^(-tau))^2 +
+    (epsilon/2) * (1 - %e^(-2*tau));
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{2}$}{\it kap}_{2}\left(D , \tau , \varepsilon\right):=2\,D\,\left(1-e^ {- \tau }\right)\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{3}$}{\it kap}_{3}\left(D , \tau , \varepsilon\right):=6\,D^2\,\left(1-e^ {- \tau }\right)^2+\frac{\varepsilon}{2}\,\left(1-e^{\left(-2\right)\,\tau}\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>plot2d([[parametric, kap2(1, tau, 1), kap3(1, tau, 1), [tau, 0, 10]],
+    [parametric, kap2(1, tau, 0.5), kap3(1, tau, 0.5), [tau, 0, 10]],
+    [parametric, kap2(1, tau, 0), kap3(1, tau, 0), [tau, 0, 10]]],
+    [legend, &quot;N=1&quot;, &quot;N=2&quot;, &quot;N=inf&quot;], [xlabel, &quot;k_2/k_1^2&quot;],
+    [ylabel, &quot;k_3/k_1^3&quot;],
+    [pdf_file, &quot;fig/exact-cumulants-test.pdf&quot;],
+    [gnuplot_preamble, &quot;set key left&quot;],
+    [gnuplot_pdf_term_command, &quot;set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font &#39;Latin Modern Roman,20&#39;&quot;]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+fig/exact-cumulants-test.pdf
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{7}$}\left[ \mbox{ /tmp/maxout55.gnuplot } , \mbox{ fig/exact-cumulants-test.pdf } \right] \]</div></div>
+</div>
+<div class="highlight-lisp notranslate"><div class="highlight"><pre><span></span><span class="nv">plot2d</span><span class="p">(</span><span class="nv">[[parametric,</span> <span class="nv">kap2</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mi">1</span><span class="p">)</span><span class="o">,</span> <span class="nv">kap3</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mi">1</span><span class="p">)</span><span class="o">,</span> <span class="nv">[tau,</span> <span class="mi">0</span><span class="o">,</span> <span class="nv">10]],</span>
+    <span class="nv">[parametric,</span> <span class="nv">kap2</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">,</span> <span class="nv">kap3</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">,</span> <span class="nv">[tau,</span> <span class="mi">0</span><span class="o">,</span> <span class="nv">10]],</span>
+    <span class="nv">[parametric,</span> <span class="nv">kap2</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mi">0</span><span class="p">)</span><span class="o">,</span> <span class="nv">kap3</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mi">0</span><span class="p">)</span><span class="o">,</span> <span class="nv">[tau,</span> <span class="mi">0</span><span class="o">,</span> <span class="nv">10]]],</span>
+    <span class="nv">[legend,</span> <span class="s">&quot;$N=1$&quot;</span><span class="o">,</span> <span class="s">&quot;$N=2$&quot;</span><span class="o">,</span> <span class="s">&quot;$N=\\infty$&quot;</span><span class="nv">],</span> <span class="nv">[xlabel,</span> <span class="s">&quot;$\\frac{\\kappa_2}{\\kappa_1^2}$&quot;</span><span class="nv">],</span>
+    <span class="nv">[ylabel,</span> <span class="s">&quot;$\\frac{\\kappa_3}{\\kappa_1^3}$&quot;</span><span class="nv">],</span>
+    <span class="nv">[gnuplot_preamble,</span> <span class="s">&quot;set key top left&quot;</span><span class="nv">],</span>
+    <span class="nv">[gnuplot_term,</span> <span class="s">&quot;cairolatex pdf lw 3 size 17.2 cm, 12.9 cm font &#39;Latin Modern Roman,20&#39;&quot;</span><span class="nv">],</span>
+    <span class="nv">[gnuplot_out_file,</span> <span class="s">&quot;fig/exact-cumulants-test.tex&quot;</span><span class="nv">]</span><span class="p">)</span><span class="c1">;</span>
+</pre></div>
 </div>
 </div>
 
@@ -723,22 +1238,22 @@ factor(difcum4 * difcum1^2 - 3 * difcum2^3 );
     </div>
 
     <nav class="relbar">
-      <a class="previous" href="../index.html" aria-label="Previous topic" >
+      <a class="previous" href="bid-diffusion-solution.html" aria-label="Previous topic" >
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
         </div>
         <div class="title">
           <span class="text">
             <span class="direction">previous</span>
-            Analysis of the Birth-Immigration-Death process
+            Forward Laplace transform
           </span>
         </div>
       </a>
-      <a class="next" href="genfunc-bid-diffapprox.html" aria-label="Next topic" >
+      <a class="next" href="../references.html" aria-label="Next topic" >
         <div class="title">
           <span class="text">
             <span class="direction">next</span>
-            Updated solution check for the diffusion approximation
+            References
           </span>
         </div>
         <div class="icon">
@@ -755,14 +1270,25 @@ factor(difcum4 * difcum1^2 - 3 * difcum2^3 );
 
 <h3><a href="../index.html">Table of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Diffusion limit via generating function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process">Compute cumulants for exact and diffusion of the BD process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genfunc-bid-diffapprox.html">Updated solution check for the diffusion approximation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genfunc-bid-diffapprox.html#Moment-generating-function">Moment generating function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genfunc-bid-diffapprox.html#Functions-to-compute-moments">Functions to compute moments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genfunc-bid-diffapprox.html#Compute-cumulants">Compute cumulants</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genfunc-bid-diffapprox.html#Appendix">Appendix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="momentapprox.html">Moment-based approximation to the BID process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html">Forward Laplace transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html#Characteristic-equation">Characteristic equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html#Homogeneous-solution">Homogeneous solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html#Inhomogeneous-solutions">Inhomogeneous solutions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html#Inverse-Laplace-transform">Inverse Laplace transform</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Diffusion limit via generating function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process">Compute cumulants for exact and diffusion of the BD process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#First-order-terms">First order terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Second-order-terms">Second order terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Relations-among-terms">Relations among terms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#Compute-cumulants-for-inhomogeneous-component-of-BID-process">Compute cumulants for inhomogeneous component of BID process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Compare-exact-and-approximate-cumulants">Compare exact and approximate cumulants</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 
