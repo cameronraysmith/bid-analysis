@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Forward Laplace transform &#8212; Analysis of the Birth-Immigration-Death process</title>
+    <title>Solving the diffusion approximation to the birth-immigration-death process &#8212; Analysis of the Birth-Immigration-Death process</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/insipid.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,7 +24,7 @@
     <script defer src="../_static/insipid-sidebar.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Diffusion limit via generating function" href="bid-exact-diffusion-comparison.html" />
+    <link rel="next" title="Comparing the exact solution and diffusion approximation to the birth-immigration-death process" href="bid-exact-diffusion-comparison.html" />
     <link rel="prev" title="Generating function analysis of the diffusion approximation to the birth-immigration-death process" href="genfunc-bid-diffapprox.html" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -62,7 +62,7 @@
           </div>
           <div class="title">
             <a class="parent" href="../index.html" accesskey="U">Analysis of the Birth-Immigration-Death process</a>
-            <a class="top" href="#">Forward Laplace transform</a>
+            <a class="top" href="#">Solving the diffusion approximation to the birth-immigration-death process</a>
           </div>
           <div class="buttons">
             <button id="fullscreen-button" type="button" aria-hidden="true">
@@ -87,7 +87,7 @@
       <a href="genfunc-bid-diffapprox.html" class="nav-icon previous" title="previous:&#13;Generating function analysis of the diffusion approximation to the birth-immigration-death process" aria-label="Previous topic" accesskey="P" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
       </a>
-      <a href="bid-exact-diffusion-comparison.html" class="nav-icon next" title="next:&#13;Diffusion limit via generating function" aria-label="Next topic" accesskey="N" tabindex="-1">
+      <a href="bid-exact-diffusion-comparison.html" class="nav-icon next" title="next:&#13;Comparing the exact solution and diffusion approximation to the birth-immigration-death process" aria-label="Next topic" accesskey="N" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
       </a>
     </nav>
@@ -108,7 +108,7 @@
         <div class="title">
           <span class="text">
             <span class="direction">next</span>
-            Diffusion limit via generating function
+            Comparing the exact solution and diffusion approximation to the birth-immigration-death process
           </span>
         </div>
         <div class="icon">
@@ -386,9 +386,10 @@ div.rendered_html tbody tr:hover {
       );
     }
   </script>
-</div><center><p>Solving the diffusion approximation to the birth-immigration-death process</p>
-</center><div class="section" id="Forward-Laplace-transform">
-<h1>Forward Laplace transform<a class="headerlink" href="#Forward-Laplace-transform" title="Permalink to this headline">¶</a></h1>
+</div><div class="section" id="Solving-the-diffusion-approximation-to-the-birth-immigration-death-process">
+<h1>Solving the diffusion approximation to the birth-immigration-death process<a class="headerlink" href="#Solving-the-diffusion-approximation-to-the-birth-immigration-death-process" title="Permalink to this headline">¶</a></h1>
+<!-- <center><font size="+4">Solving the diffusion approximation to the birth-immigration-death process</font></center> --><div class="section" id="Forward-Laplace-transform">
+<h2>Forward Laplace transform<a class="headerlink" href="#Forward-Laplace-transform" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -432,7 +433,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Characteristic-equation">
-<h1>Characteristic equation<a class="headerlink" href="#Characteristic-equation" title="Permalink to this headline">¶</a></h1>
+<h2>Characteristic equation<a class="headerlink" href="#Characteristic-equation" title="Permalink to this headline">¶</a></h2>
 <p>Compute the integral for the implicit solution.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -534,7 +535,7 @@ theta0sol : solve ([((D* theta - s) * theta0) / ((D* theta0 - s) * theta) =
 </div>
 </div>
 <div class="section" id="Homogeneous-solution">
-<h1>Homogeneous solution<a class="headerlink" href="#Homogeneous-solution" title="Permalink to this headline">¶</a></h1>
+<h2>Homogeneous solution<a class="headerlink" href="#Homogeneous-solution" title="Permalink to this headline">¶</a></h2>
 <p>Re-expressing <span class="math notranslate nohighlight">\(u\)</span> in terms of <span class="math notranslate nohighlight">\(\tau\)</span> and including the initial condition <span class="math notranslate nohighlight">\(P(x,0) = \delta(x-x_0) \Rightarrow \Gamma_{\mathrm{hom}}(\theta, 0)=x_0 \, \theta\)</span>, where <span class="math notranslate nohighlight">\(\Rightarrow\)</span> indicates taking the logarithm of the Laplace transform, yields</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -591,7 +592,7 @@ theta0sol : solve ([((D* theta - s) * theta0) / ((D* theta0 - s) * theta) =
 </div>
 </div>
 <div class="section" id="Inhomogeneous-solutions">
-<h1>Inhomogeneous solutions<a class="headerlink" href="#Inhomogeneous-solutions" title="Permalink to this headline">¶</a></h1>
+<h2>Inhomogeneous solutions<a class="headerlink" href="#Inhomogeneous-solutions" title="Permalink to this headline">¶</a></h2>
 <p>Find the characteristic which passes through a given point (theta_f, tau_f).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -720,9 +721,9 @@ theta0sol : solve ([((D* theta - s) * theta0) / ((D* theta0 - s) * theta) =
 </div>
 </div>
 <div class="section" id="Inverse-Laplace-transform">
-<h1>Inverse Laplace transform<a class="headerlink" href="#Inverse-Laplace-transform" title="Permalink to this headline">¶</a></h1>
+<h2>Inverse Laplace transform<a class="headerlink" href="#Inverse-Laplace-transform" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h2>Homogeneous solution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h3>Homogeneous solution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>We proceed by constructing a change of variable to place the inverse Laplace transform integral into a form enabling the identification of a Bessel function solution. Combining the form of the Laplace transform with the form of <code class="docutils literal notranslate"><span class="pre">gamhom</span></code> we have</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -909,7 +910,7 @@ bvalue: (D/s) * (%e^(s*tau)- 1);
 </div>
 </div>
 <div class="section" id="Inhomogeneous-solution">
-<h2>Inhomogeneous solution<a class="headerlink" href="#Inhomogeneous-solution" title="Permalink to this headline">¶</a></h2>
+<h3>Inhomogeneous solution<a class="headerlink" href="#Inhomogeneous-solution" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
@@ -984,6 +985,7 @@ bvalue: (D/s) * (%e^(s*tau)- 1);
 </div>
 </div>
 </div>
+</div>
 
           </div>
         </div>
@@ -1007,7 +1009,7 @@ bvalue: (D/s) * (%e^(s*tau)- 1);
         <div class="title">
           <span class="text">
             <span class="direction">next</span>
-            Diffusion limit via generating function
+            Comparing the exact solution and diffusion approximation to the birth-immigration-death process
           </span>
         </div>
         <div class="icon">
@@ -1025,19 +1027,19 @@ bvalue: (D/s) * (%e^(s*tau)- 1);
 <h3><a href="../index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="genfunc-bid-diffapprox.html">Generating function analysis of the diffusion approximation to the birth-immigration-death process</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Forward Laplace transform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Characteristic-equation">Characteristic equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Homogeneous-solution">Homogeneous solution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Inhomogeneous-solutions">Inhomogeneous solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Inverse-Laplace-transform">Inverse Laplace transform</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Homogeneous solution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Inhomogeneous-solution">Inhomogeneous solution</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Solving the diffusion approximation to the birth-immigration-death process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Forward-Laplace-transform">Forward Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Characteristic-equation">Characteristic equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Homogeneous-solution">Homogeneous solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Inhomogeneous-solutions">Inhomogeneous solutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Inverse-Laplace-transform">Inverse Laplace transform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Homogeneous solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Inhomogeneous-solution">Inhomogeneous solution</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bid-exact-diffusion-comparison.html">Diffusion limit via generating function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bid-exact-diffusion-comparison.html#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process">Compute cumulants for exact and diffusion of the BD process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bid-exact-diffusion-comparison.html#Compute-cumulants-for-inhomogeneous-component-of-BID-process">Compute cumulants for inhomogeneous component of BID process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bid-exact-diffusion-comparison.html#Compare-exact-and-approximate-cumulants">Compare exact and approximate cumulants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bid-exact-diffusion-comparison.html">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 

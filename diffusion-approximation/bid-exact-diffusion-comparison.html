@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Diffusion limit via generating function &#8212; Analysis of the Birth-Immigration-Death process</title>
+    <title>Comparing the exact solution and diffusion approximation to the birth-immigration-death process &#8212; Analysis of the Birth-Immigration-Death process</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/insipid.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="References" href="../references.html" />
-    <link rel="prev" title="Forward Laplace transform" href="bid-diffusion-solution.html" />
+    <link rel="prev" title="Solving the diffusion approximation to the birth-immigration-death process" href="bid-diffusion-solution.html" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
   </head>
@@ -62,7 +62,7 @@
           </div>
           <div class="title">
             <a class="parent" href="../index.html" accesskey="U">Analysis of the Birth-Immigration-Death process</a>
-            <a class="top" href="#">Diffusion limit via generating function</a>
+            <a class="top" href="#">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</a>
           </div>
           <div class="buttons">
             <button id="fullscreen-button" type="button" aria-hidden="true">
@@ -84,7 +84,7 @@
       </div>
     </header>
     <nav>
-      <a href="bid-diffusion-solution.html" class="nav-icon previous" title="previous:&#13;Forward Laplace transform" aria-label="Previous topic" accesskey="P" tabindex="-1">
+      <a href="bid-diffusion-solution.html" class="nav-icon previous" title="previous:&#13;Solving the diffusion approximation to the birth-immigration-death process" aria-label="Previous topic" accesskey="P" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
       </a>
       <a href="../references.html" class="nav-icon next" title="next:&#13;References" aria-label="Next topic" accesskey="N" tabindex="-1">
@@ -100,7 +100,7 @@
         <div class="title">
           <span class="text">
             <span class="direction">previous</span>
-            Forward Laplace transform
+            Solving the diffusion approximation to the birth-immigration-death process
           </span>
         </div>
       </a>
@@ -386,9 +386,10 @@ div.rendered_html tbody tr:hover {
       );
     }
   </script>
-</div><center><p>Comparing the exact solution and diffusion approximation to the birth-immigration-death process</p>
-</center><div class="section" id="Diffusion-limit-via-generating-function">
-<h1>Diffusion limit via generating function<a class="headerlink" href="#Diffusion-limit-via-generating-function" title="Permalink to this headline">¶</a></h1>
+</div><div class="section" id="Comparing-the-exact-solution-and-diffusion-approximation-to-the-birth-immigration-death-process">
+<h1>Comparing the exact solution and diffusion approximation to the birth-immigration-death process<a class="headerlink" href="#Comparing-the-exact-solution-and-diffusion-approximation-to-the-birth-immigration-death-process" title="Permalink to this headline">¶</a></h1>
+<!-- <center><font size="+4">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</font></center> --><div class="section" id="Diffusion-limit-via-generating-function">
+<h2>Diffusion limit via generating function<a class="headerlink" href="#Diffusion-limit-via-generating-function" title="Permalink to this headline">¶</a></h2>
 <p>Define the moment generating function.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -531,7 +532,7 @@ texput(tau, &quot;(\\tau - \\tau_{0})&quot;);
 </div>
 </div>
 <div class="section" id="Compute-cumulants-for-exact-and-diffusion-of-the-BD-process">
-<h1>Compute cumulants for exact and diffusion of the BD process<a class="headerlink" href="#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process" title="Permalink to this headline">¶</a></h1>
+<h2>Compute cumulants for exact and diffusion of the BD process<a class="headerlink" href="#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -608,7 +609,7 @@ cumu(4, t, n0, kb, kd);
 \[\tag{${\it \%o}_{13}$}\frac{\left({\it kd}+{\it kb}\right)\,n_{0}\,\left(e^{{\it kd}\,t}-e^{{\it kb}\,t}\right)\,e^{{\it kb}\,t-4\,{\it kd}\,t}\,\left(-6\,{\it kd}^2\,e^{{\it kd}\,t+{\it kb}\,t}-12\,{\it kb}\,{\it kd}\,e^{{\it kd}\,t+{\it kb}\,t}-6\,{\it kb}^2\,e^{{\it kd}\,t+{\it kb}\,t}+{\it kd}^2\,e^{2\,{\it kd}\,t}+10\,{\it kb}\,{\it kd}\,e^{2\,{\it kd}\,t}+{\it kb}^2\,e^{2\,{\it kd}\,t}+6\,{\it kd}^2\,e^{2\,{\it kb}\,t}+6\,{\it kb}^2\,e^{2\,{\it kb}\,t}\right)}{\left({\it kd}-{\it kb}\right)^3}\]</div></div>
 </div>
 <div class="section" id="First-order-terms">
-<h2>First order terms<a class="headerlink" href="#First-order-terms" title="Permalink to this headline">¶</a></h2>
+<h3>First order terms<a class="headerlink" href="#First-order-terms" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
@@ -755,7 +756,7 @@ difcum4 : subst(0, epsilon, epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 </div>
 </div>
 <div class="section" id="Second-order-terms">
-<h2>Second order terms<a class="headerlink" href="#Second-order-terms" title="Permalink to this headline">¶</a></h2>
+<h3>Second order terms<a class="headerlink" href="#Second-order-terms" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
@@ -792,7 +793,7 @@ difcum4 : subst(0, epsilon, epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 </div>
 </div>
 <div class="section" id="Relations-among-terms">
-<h2>Relations among terms<a class="headerlink" href="#Relations-among-terms" title="Permalink to this headline">¶</a></h2>
+<h3>Relations among terms<a class="headerlink" href="#Relations-among-terms" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -822,7 +823,7 @@ factor(difcum4 * difcum1^2 - 3 * difcum2^3 );
 </div>
 </div>
 <div class="section" id="Compute-cumulants-for-inhomogeneous-component-of-BID-process">
-<h1>Compute cumulants for inhomogeneous component of BID process<a class="headerlink" href="#Compute-cumulants-for-inhomogeneous-component-of-BID-process" title="Permalink to this headline">¶</a></h1>
+<h2>Compute cumulants for inhomogeneous component of BID process<a class="headerlink" href="#Compute-cumulants-for-inhomogeneous-component-of-BID-process" title="Permalink to this headline">¶</a></h2>
 <p>Cumulant generating function for inhomogenous equation.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
@@ -1159,7 +1160,7 @@ kap4 : factor(coeff(coeff(inhgenexpanded, theta, 4), epsilon, 0)) +
 </div>
 </div>
 <div class="section" id="Compare-exact-and-approximate-cumulants">
-<h1>Compare exact and approximate cumulants<a class="headerlink" href="#Compare-exact-and-approximate-cumulants" title="Permalink to this headline">¶</a></h1>
+<h2>Compare exact and approximate cumulants<a class="headerlink" href="#Compare-exact-and-approximate-cumulants" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -1230,6 +1231,7 @@ fig/exact-cumulants-test.pdf
 </pre></div>
 </div>
 </div>
+</div>
 
           </div>
         </div>
@@ -1245,7 +1247,7 @@ fig/exact-cumulants-test.pdf
         <div class="title">
           <span class="text">
             <span class="direction">previous</span>
-            Forward Laplace transform
+            Solving the diffusion approximation to the birth-immigration-death process
           </span>
         </div>
       </a>
@@ -1271,20 +1273,19 @@ fig/exact-cumulants-test.pdf
 <h3><a href="../index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="genfunc-bid-diffapprox.html">Generating function analysis of the diffusion approximation to the birth-immigration-death process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html">Forward Laplace transform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html#Characteristic-equation">Characteristic equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html#Homogeneous-solution">Homogeneous solution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html#Inhomogeneous-solutions">Inhomogeneous solutions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html#Inverse-Laplace-transform">Inverse Laplace transform</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Diffusion limit via generating function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process">Compute cumulants for exact and diffusion of the BD process</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#First-order-terms">First order terms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Second-order-terms">Second order terms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Relations-among-terms">Relations among terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html">Solving the diffusion approximation to the birth-immigration-death process</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Diffusion-limit-via-generating-function">Diffusion limit via generating function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process">Compute cumulants for exact and diffusion of the BD process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#First-order-terms">First order terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Second-order-terms">Second order terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Relations-among-terms">Relations among terms</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#Compute-cumulants-for-inhomogeneous-component-of-BID-process">Compute cumulants for inhomogeneous component of BID process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Compare-exact-and-approximate-cumulants">Compare exact and approximate cumulants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Compute-cumulants-for-inhomogeneous-component-of-BID-process">Compute cumulants for inhomogeneous component of BID process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Compare-exact-and-approximate-cumulants">Compare exact and approximate cumulants</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 
