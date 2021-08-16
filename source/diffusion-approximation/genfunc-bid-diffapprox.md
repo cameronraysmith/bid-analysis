@@ -393,7 +393,7 @@ block([mo],
     factor(coeff (mo, N, -2)) / N^2);
 ```
 
-```maxima
+```maxima tags=[]
 plot2d(
     subst(1.0, s, 
         (%e^(s*tau)-1)*%e^(s*tau)*(%e^(s*tau)+1)/2),
