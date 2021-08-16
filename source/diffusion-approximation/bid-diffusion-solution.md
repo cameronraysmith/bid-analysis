@@ -12,10 +12,12 @@ jupyter:
     name: maxima
 ---
 
-<center><font size="+4">Solving the diffusion approximation to the birth-immigration-death process</font></center>
+# Solving the diffusion approximation to the birth-immigration-death process
+
+<!-- <center><font size="+4">Solving the diffusion approximation to the birth-immigration-death process</font></center> -->
 
 
-# Forward Laplace transform
+## Forward Laplace transform
 
 ```maxima tags=[]
 diffusioneqn (rho, D, s, M) := 
@@ -32,7 +34,7 @@ cgfeqn (gam, D, s, M) :=
     M * theta;
 ```
 
-# Characteristic equation
+## Characteristic equation
 
 
 Compute the integral for the implicit solution.
@@ -64,7 +66,7 @@ chareqn(theta) := diff(theta, u) - D * theta^2 + s * theta;
 factor(chareqn(part(thetasol, 2)));
 ```
 
-# Homogeneous solution
+## Homogeneous solution
 
 
 Re-expressing $u$ in terms of $\tau$ and including the initial condition $P(x,0) = \delta(x-x_0) \Rightarrow \Gamma_{\mathrm{hom}}(\theta, 0)=x_0 \, \theta$, where $\Rightarrow$ indicates taking the logarithm of the Laplace transform, yields
@@ -84,7 +86,7 @@ Noting $M=0$ in the homogeneous case
 factor(cgfeqn (gamhom, D, s, 0));
 ```
 
-# Inhomogeneous solutions
+## Inhomogeneous solutions
 
 
 Find the characteristic which passes through a given point (theta_f, tau_f).
@@ -125,10 +127,10 @@ Adding back the factor of $M$ provides the solution to the inhomogeneous CGF.
 gaminh : (M/D) * log( (D/s) * (%e^(-s * tau) - 1) * theta + 1);
 ```
 
-# Inverse Laplace transform
+## Inverse Laplace transform
 
 
-## Homogeneous solution
+### Homogeneous solution
 
 
 We proceed by constructing a change of variable to place the inverse Laplace transform integral into a form enabling the identification of a Bessel function solution. Combining the form of the Laplace transform with the form of `gamhom` we have
@@ -189,7 +191,7 @@ factor(psubst([a = avalue,
                sqrt(a*x)/b));
 ```
 
-## Inhomogeneous solution
+### Inhomogeneous solution
 
 ```maxima
 invinhvarchange : theta = 
