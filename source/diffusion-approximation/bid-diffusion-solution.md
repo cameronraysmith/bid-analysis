@@ -27,11 +27,15 @@ diffusioneqn (rho, D, s, M) :=
     M * diff (rho, x);
 ```
 
-```maxima
+```maxima tags=[]
 cgfeqn (gam, D, s, M) := 
     diff (gam, tau) +
     (D * theta^2 - s* theta) * diff (gam, theta) -
     M * theta;
+```
+
+```maxima tags=[]
+factor(diffusioneqn (rho0(x,tau), D, s, M));
 ```
 
 ## Characteristic equation
@@ -39,13 +43,13 @@ cgfeqn (gam, D, s, M) :=
 
 Compute the integral for the implicit solution.
 
-```maxima
+```maxima tags=[]
 logcontract(integrate(1/(D * thp^2 - s * thp), thp));
 ```
 
 Solve the implicit equation.
 
-```maxima
+```maxima tags=[]
 thetasol : solve ([((D* theta - s) * theta0) / ((D* theta0 - s) * theta) =
     %e^(s*u)], [theta])[1];
 theta0sol : solve ([((D* theta - s) * theta0) / ((D* theta0 - s) * theta) =
@@ -54,7 +58,7 @@ theta0sol : solve ([((D* theta - s) * theta0) / ((D* theta0 - s) * theta) =
 
 Check the solution.
 
-```maxima
+```maxima tags=[]
 subst(0, u,  thetasol);
 ```
 
@@ -62,7 +66,7 @@ subst(0, u,  thetasol);
 chareqn(theta) := diff(theta, u) - D * theta^2 + s * theta;
 ```
 
-```maxima
+```maxima tags=[]
 factor(chareqn(part(thetasol, 2)));
 ```
 
@@ -71,18 +75,18 @@ factor(chareqn(part(thetasol, 2)));
 
 Re-expressing $u$ in terms of $\tau$ and including the initial condition $P(x,0) = \delta(x-x_0) \Rightarrow \Gamma_{\mathrm{hom}}(\theta, 0)=x_0 \, \theta$, where $\Rightarrow$ indicates taking the logarithm of the Laplace transform, yields
 
-```maxima
+```maxima tags=[]
 gamhom : x0 * s * theta * %e^(s*tau) / 
     (D * (%e^(s*tau) - 1) * theta + s);
 ```
 
-```maxima
+```maxima tags=[]
 factor(gamhom - x0 * subst(tau, u, part(theta0sol, 2)));
 ```
 
 Noting $M=0$ in the homogeneous case
 
-```maxima
+```maxima tags=[]
 factor(cgfeqn (gamhom, D, s, 0));
 ```
 
@@ -91,39 +95,39 @@ factor(cgfeqn (gamhom, D, s, 0));
 
 Find the characteristic which passes through a given point (theta_f, tau_f).
 
-```maxima
+```maxima tags=[]
 th0sol : solve([thetaf = 
         subst(uf, u, part(thetasol, 2))], [theta0])[1];
 ```
 
-```maxima
+```maxima tags=[]
 thfsol : factor(psubst(th0sol, thetasol));
 ```
 
-```maxima
+```maxima tags=[]
 subst(uf, u, thfsol);
 ```
 
 Integrate along that characteristic.
 
-```maxima
+```maxima tags=[]
 ginhint : integrate((thetaf*s*%e^(uf*s))/
     (s*%e^(s*u)-D*thetaf*%e^(s*u)+D*thetaf*%e^(uf*s)), u);
 ```
 
-```maxima
+```maxima tags=[]
 logcontract(ev(factor(subst(uf, u, ginhint) - subst(0, u, ginhint)), 
         logexpand=super));
 ```
 
-```maxima
+```maxima tags=[]
 logcontract(ev(factor(subst(uf, u, ginhint) - subst(0, u, ginhint)), 
         logexpand=super));
 ```
 
 Adding back the factor of $M$ provides the solution to the inhomogeneous CGF.
 
-```maxima
+```maxima tags=[]
 gaminh : (M/D) * log( (D/s) * (%e^(-s * tau) - 1) * theta + 1);
 ```
 
@@ -135,7 +139,7 @@ gaminh : (M/D) * log( (D/s) * (%e^(-s * tau) - 1) * theta + 1);
 
 We proceed by constructing a change of variable to place the inverse Laplace transform integral into a form enabling the identification of a Bessel function solution. Combining the form of the Laplace transform with the form of `gamhom` we have
 
-```maxima
+```maxima tags=[]
 schemintgr : x * theta  - a * theta / (b * theta + 1);
 ```
 
@@ -193,22 +197,39 @@ factor(psubst([a = avalue,
 
 ### Inhomogeneous solution
 
-```maxima
+```maxima tags=[]
 invinhvarchange : theta = 
-    thetap/x - s / (D * (%e^(s * tau) - 1));
+    thetap/x - s / (D*(%e^(s * tau) - 1));
 ```
 
-```maxima
-factor(psubst(invinhvarchange, 
-  (D/s) * (%e^(s * tau) - 1) * theta + 1));
+```maxima tags=[]
+diff(part(invinhvarchange,2), thetap, 1);
 ```
 
-```maxima
+```maxima tags=[]
+factor(ratsimp(
+  psubst(invinhvarchange, 
+         diff(part(invinhvarchange,2), thetap, 1)
+         *e^(x*theta)*((D/s) * (%e^(s * tau) - 1) * theta + 1)^(-M/D))
+         ));
+```
+
+```maxima tags=[]
+factor(part(%o116,1,2,2)+part(%o116,1,2,3));
+```
+
+```maxima tags=[]
 inhdifsol : x^(M/D - 1) * 
-    %e^(-s*x/(D * (%e^(s * tau) - 1))) /
-    ((%e^(s * tau) - 1)^(M/D));
+    %e^(-s*x/(D * (%e^(s * tau) - 1))) *
+    ((D*(%e^(s * tau) - 1)/s)^(-M/D));
 ```
 
-```maxima
-factor(diffusioneqn (inhdifsol, D, s, M));
+```maxima tags=[]
+inhdifsol : x^(M/D - 1) * 
+    %e^(-s*x/(D * (%e^(s * tau) - 1))) *
+    (((%e^(s * tau) - 1))^(-M/D));
+```
+
+```maxima tags=[]
+factor(expand(diffusioneqn (inhdifsol, D, s, M)));
 ```
