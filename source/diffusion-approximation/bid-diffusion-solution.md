@@ -164,7 +164,7 @@ avalue: x0 * %e^(s*tau);
 bvalue: (D/s) * (%e^(s*tau)- 1);
 ```
 
-that `gamhom` $ = \frac {a \theta}{b \theta +1}$
+that $\mathrm{gamhom} = \frac {a \theta}{b \theta +1}$
 
 ```maxima tags=[]
 factor(gamhom - avalue*theta/(bvalue*theta +1));
