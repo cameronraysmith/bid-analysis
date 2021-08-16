@@ -12,14 +12,16 @@ jupyter:
     name: maxima
 ---
 
-<center><font size="+4">Generating function analysis of the diffusion approximation to the birth-immigration-death process</font></center>
+# Generating function analysis of the diffusion approximation to the birth-immigration-death process
+
+<!-- <center><font size="+4">Generating function analysis of the diffusion approximation to the birth-immigration-death process</font></center> -->
 
 <!-- #region tags=[] -->
-# Updated solution check for the diffusion approximation
+## Updated solution check for the diffusion approximation
 <!-- #endregion -->
 
 <!-- #region tags=[] -->
-## Check the solution to the characteristic equation.
+### Check the solution to the characteristic equation.
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -61,7 +63,7 @@ factor(chareqn(chartheta));
 ```
 
 <!-- #region tags=[] -->
-## Check the solution for the cumulant generating function.
+### Check the solution for the cumulant generating function.
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -81,7 +83,7 @@ factor(gfeqn(cgfsol));
 ```
 
 <!-- #region tags=[] -->
-## Find the characteristic which passes through a given point ($\theta_f$, $\tau_f$).
+### Find the characteristic which passes through a given point ($\theta_f$, $\tau_f$).
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -102,7 +104,7 @@ factor(subst(tau[0]-tau[f], u[f], psubst(th0sol, chartheta)));
 ```
 
 <!-- #region tags=[] -->
-## Integrate along that characteristic. 
+### Integrate along that characteristic. 
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -116,7 +118,7 @@ ginhint : integrate((theta[f]*s*%e^(u*s))/
 ```
 
 <!-- #region tags=[] -->
-## Check the resulting inhomogenous solution to the c.g.f. equation. 
+### Check the resulting inhomogenous solution to the c.g.f. equation. 
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -156,7 +158,7 @@ factor(gfeqn(mgfinh) + M * theta * mgfinh);
 ```
 
 <!-- #region tags=[] -->
-## Check the old solution for the probability density. 
+### Check the old solution for the probability density. 
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -214,7 +216,7 @@ factor(difeqn(goodrho));
 ```
 
 <!-- #region tags=[] -->
-## Homogeneous inverse Laplace transform
+### Homogeneous inverse Laplace transform
 <!-- #endregion -->
 
 ```maxima
@@ -240,7 +242,7 @@ factor(psubst([a = x0 * %e^(-s*tau),
 ```
 
 <!-- #region tags=[] -->
-## Inhomogeneous inverse Laplace transfom
+### Inhomogeneous inverse Laplace transfom
 Trying to solve for the probability density.
 <!-- #endregion -->
 
@@ -279,7 +281,7 @@ factor(difeqn(newrho));
 ```
 
 <!-- #region tags=[] -->
-# Moment generating function
+## Moment generating function
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -335,8 +337,8 @@ factor(genfunc(0, N * tau, N * x0, D + s/(2*N), D - s/(2*N)));
 genfunc(1, t, n0, kb, kd);
 ```
 
-<!-- #region tags=[] toc-hr-collapsed=true jp-MarkdownHeadingCollapsed=true tags=[] -->
-# Functions to compute moments
+<!-- #region tags=[] toc-hr-collapsed=true tags=[] -->
+## Functions to compute moments
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -362,8 +364,8 @@ cumuren(m, zt, n0, kb, kd) :=
                 cumu(m, t, n0, kb, kd) / N^m))$
 ```
 
-<!-- #region tags=[] toc-hr-collapsed=true jp-MarkdownHeadingCollapsed=true tags=[] -->
-# Compute cumulants
+<!-- #region tags=[] toc-hr-collapsed=true tags=[] -->
+## Compute cumulants
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -397,14 +399,6 @@ plot2d(
         (%e^(s*tau)-1)*%e^(s*tau)*(%e^(s*tau)+1)/2),
 [tau, 0, 1]);
 ```
-
-<!-- #region tags=[] toc-hr-collapsed=true tags=[] -->
-# Appendix
-<!-- #endregion -->
-
-<!-- #region jp-MarkdownHeadingCollapsed=true tags=[] -->
-## Original maxima code
-<!-- #endregion -->
 
 ```maxima
 /* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
