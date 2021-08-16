@@ -12,10 +12,12 @@ jupyter:
     name: maxima
 ---
 
-<center><font size="+4">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</font></center>
+# Comparing the exact solution and diffusion approximation to the birth-immigration-death process
+
+<!-- <center><font size="+4">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</font></center> -->
 
 
-# Diffusion limit via generating function
+## Diffusion limit via generating function
 
 
 Define the moment generating function.
@@ -72,7 +74,7 @@ tex(factor(coeff(cgfexpansion, epsilon, 2)));
 tex(factor(coeff(cgfexpansion, epsilon, 4)));
 ```
 
-# Compute cumulants for exact and diffusion of the BD process
+## Compute cumulants for exact and diffusion of the BD process
 
 ```maxima tags=[]
 numop(n, gf) := 
@@ -94,7 +96,7 @@ cumu(3, t, n0, kb, kd);
 cumu(4, t, n0, kb, kd);
 ```
 
-## First order terms
+### First order terms
 
 ```maxima tags=[]
 difcum1 : taylor(epsilon * cumu(1, t / epsilon, x0 / epsilon, 
@@ -130,7 +132,7 @@ difcum4 : subst(0, epsilon, epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 ```
 
 <!-- #region tags=[] -->
-## Second order terms
+### Second order terms
 <!-- #endregion -->
 
 ```maxima tags=[]
@@ -141,14 +143,14 @@ factor(coeff(difcum3, epsilon, 2));
 factor(coeff(difcum4, epsilon, 2));
 ```
 
-## Relations among terms
+### Relations among terms
 
 ```maxima tags=[]
 factor(2 * difcum3 * difcum1 - 3 * difcum2^2);
 factor(difcum4 * difcum1^2 - 3 * difcum2^3 );
 ```
 
-# Compute cumulants for inhomogeneous component of BID process
+## Compute cumulants for inhomogeneous component of BID process
 
 
 Cumulant generating function for inhomogenous equation.
@@ -230,7 +232,7 @@ kap4 : factor(coeff(coeff(inhgenexpanded, theta, 4), epsilon, 0)) +
     (1/N) * factor(coeff(coeff(inhgenexpanded, theta, 4), epsilon, 1));
 ```
 
-# Compare exact and approximate cumulants
+## Compare exact and approximate cumulants
 
 ```maxima tags=[]
 kap2 (D, tau, epsilon) := 2* D * (1 - %e^(-tau));
