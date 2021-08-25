@@ -9,6 +9,7 @@
    :maxdepth: 4
    :glob:
    
+   exact-solution/exact-solution
    diffusion-approximation/genfunc-bid-diffapprox
    diffusion-approximation/bid-diffusion-solution
    diffusion-approximation/bid-exact-diffusion-comparison
