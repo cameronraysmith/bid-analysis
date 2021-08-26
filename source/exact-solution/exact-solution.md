@@ -17,6 +17,9 @@ jupyter:
 
 ## Solution of the BID process using the method of characteristics
 
+<!-- #region tags=[] -->
+### Homogeneous equation
+<!-- #endregion -->
 
 Homogeneous PDE statisfied by the CGF.
 
@@ -79,6 +82,13 @@ factor(zsol - newzsol);
 Likewise, reorder the solution for z for typesetting.
 
 ```maxima
+factor(coeff(expand(num(z0sol)), z, 1)) * z;
+factor(coeff(expand(num(z0sol)), z, 0));
+factor(coeff(expand(denom(z0sol)), z, 1)) *z;
+factor(coeff(expand(denom(z0sol)), z, 0));
+```
+
+```maxima
 newz0sol : (((sigma - 1) * (1 - %e^(-t))
    + (1 - sigma - (1 + sigma) * %e^(-t)) * z) / 
     ((-1 - sigma + (1 - sigma) * %e^(-t)) + 
@@ -95,12 +105,68 @@ Check that the solution satsfies the PDE.
 factor(homcgfeqn(z0sol));
 ```
 
+<!-- #region tags=[] -->
+### Inhomogeneous equation
+<!-- #endregion -->
+
+Find characteristic passing through point $(t, z)$ parameterized by $t_p$.
+
+```maxima tags=[]
+charz : factor(psubst([t = tp, z0 = z0sol], zsol));
+```
+
+```maxima
+subst(t, tp, charz);
+```
+
+Pull off coefficients for typesetting.
+
+```maxima
+factor(coeff(num(charz), z, 0));
+factor(coeff(num(charz), z, 1));
+factor(coeff(denom(charz), z, 0));
+factor(coeff(denom(charz), z, 1));
+```
+
+Carry out the integral.
+
+```maxima
+block([indef],
+    indef : integrate(charz - 1, tp),
+    charint : logcontract (subst(t, tp, indef) - subst(0, tp, indef)));
+```
+
+```maxima
+part(charint, 1, 1, 1, 2, 1, 1, 2, 1);
+```
+
+Re-express it for typesetting.
+
+```maxima
+logcontract(ev(
+((2 * sigma) / (1 + sigma)) * 
+    log((2 * sigma * %e^(-t)) /
+        ((1 + sigma) * (1 - %e^(-t)) * z
+        - 1 - sigma + (1 - sigma) * %e^(-t)))
+        - charint,
+    logexpand = super));
+```
+
+Check that it satisfies the original CGF equation.
+
+```maxima
+factor(homcgfeqn(charint));
+```
+
 ## Recovering the distribution
 
+<!-- #region tags=[] -->
+### Homogeneous equation
+<!-- #endregion -->
 
 Re-express the generating function in a form that makes it easy to expand as a geometric series.
 
-```maxima
+```maxima tags=[]
 apiece : factor(coeff(expand(num(z0sol)), z, 0) /
     coeff(expand(denom(z0sol)), z, 0));
 bpiece : factor((coeff(expand(num(z0sol)), z, 1) * 
@@ -112,17 +178,17 @@ cpiece : factor(-coeff(expand(denom(z0sol)), z, 1) /
     coeff(expand(denom(z0sol)), z, 0));
 ```
 
-```maxima
+```maxima tags=[]
 factor(apiece + bpiece * z / (1 - cpiece * z)- z0sol);
 ```
 
 Re-express the generating function in a form that makes it easy to expand as a binomial series.
 
-```maxima
+```maxima tags=[]
 psubst([t = 1.0, sigma = 0.2], [apiece, bpiece, cpiece]);
 ```
 
-```maxima
+```maxima tags=[]
 appi : factor(coeff(expand(num(z0sol)), z, 1) /
     coeff(expand(num(z0sol)), z, 0));
 bppi : factor(-coeff(expand(denom(z0sol)), z, 1) /
@@ -131,12 +197,28 @@ cppi : factor(coeff(expand(num(z0sol)), z, 0) /
     coeff(expand(denom(z0sol)), z, 0));
 ```
 
-```maxima
+```maxima tags=[]
 factor(cppi * (1 + appi * z) / (1 - bppi * z) - z0sol);
 ```
 
-Check agreement numerically
+Compute example numerical values of the Taylor series expansion of $z_0$
 
 ```maxima tags=[]
 psubst([sigma = 0.2, t = 1.0], taylor(newz0sol, z, 0, 6));
+```
+
+<!-- #region tags=[] -->
+### Inhomogeneous equation
+<!-- #endregion -->
+
+```maxima
+inhmgfrac : 
+((1 + sigma) * (1 - %e^(-t)) * z
+        - 1 - sigma + (1 - sigma) * %e^(-t)) / 
+    (2 * sigma * %e^(-t));
+```
+
+```maxima tags=[]
+factor(coeff(expand(inhmgfrac), z, 0));
+factor(-coeff(expand(inhmgfrac), z, 1));
 ```
