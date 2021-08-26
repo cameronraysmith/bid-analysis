@@ -390,6 +390,8 @@ div.rendered_html tbody tr:hover {
 <h1>Exact solulution to the BID process<a class="headerlink" href="#Exact-solulution-to-the-BID-process" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Solution-of-the-BID-process-using-the-method-of-characteristics">
 <h2>Solution of the BID process using the method of characteristics<a class="headerlink" href="#Solution-of-the-BID-process-using-the-method-of-characteristics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Homogeneous-equation">
+<h3>Homogeneous equation<a class="headerlink" href="#Homogeneous-equation" title="Permalink to this headline">¶</a></h3>
 <p>Homogeneous PDE statisfied by the CGF.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -584,6 +586,50 @@ factor(coeff(expand(denom(zsol)), z0, 0));
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(coeff(expand(num(z0sol)), z, 1)) * z;
+factor(coeff(expand(num(z0sol)), z, 0));
+factor(coeff(expand(denom(z0sol)), z, 1)) *z;
+factor(coeff(expand(denom(z0sol)), z, 0));
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{13}$}-\left(\sigma\,e^{t}-e^{t}+\sigma+1\right)\,z\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{14}$}\left(\sigma-1\right)\,\left(e^{t}-1\right)\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{15}$}\left(\sigma+1\right)\,\left(e^{t}-1\right)\,z\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{16}$}-\left(\sigma\,e^{t}+e^{t}+\sigma-1\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
 <span></span>newz0sol : (((sigma - 1) * (1 - %e^(-t))
    + (1 - sigma - (1 + sigma) * %e^(-t)) * z) /
     ((-1 - sigma + (1 - sigma) * %e^(-t)) +
@@ -592,15 +638,15 @@ factor(coeff(expand(denom(zsol)), z0, 0));
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{13}$}\frac{\left(\left(-\sigma-1\right)\,e^ {- t }-\sigma+1\right)\,z+\left(\sigma-1\right)\,\left(1-e^ {- t }\right)}{\left(\sigma+1\right)\,\left(1-e^ {- t }\right)\,z+\left(1-\sigma\right)\,e^ {- t }-\sigma-1}\]</div></div>
+\[\tag{${\it \%o}_{17}$}\frac{\left(\left(-\sigma-1\right)\,e^ {- t }-\sigma+1\right)\,z+\left(\sigma-1\right)\,\left(1-e^ {- t }\right)}{\left(\sigma+1\right)\,\left(1-e^ {- t }\right)\,z+\left(1-\sigma\right)\,e^ {- t }-\sigma-1}\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -609,16 +655,16 @@ factor(coeff(expand(denom(zsol)), z0, 0));
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{14}$}0\]</div></div>
+\[\tag{${\it \%o}_{18}$}0\]</div></div>
 </div>
 <p>Check that the solution satsfies the PDE.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -627,19 +673,184 @@ factor(coeff(expand(denom(zsol)), z0, 0));
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{15}$}0\]</div></div>
+\[\tag{${\it \%o}_{19}$}0\]</div></div>
+</div>
+</div>
+<div class="section" id="Inhomogeneous-equation">
+<h3>Inhomogeneous equation<a class="headerlink" href="#Inhomogeneous-equation" title="Permalink to this headline">¶</a></h3>
+<p>Find characteristic passing through point <span class="math notranslate nohighlight">\((t, z)\)</span> parameterized by <span class="math notranslate nohighlight">\(t_p\)</span>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>charz : factor(psubst([t = tp, z0 = z0sol], zsol));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{20}$}\frac{\sigma\,e^{{\it tp}}\,z+e^{{\it tp}}\,z+\sigma\,e^{t}\,z-e^{t}\,z+\sigma\,e^{{\it tp}}-e^{{\it tp}}-\sigma\,e^{t}+e^{t}}{\sigma\,e^{{\it tp}}\,z+e^{{\it tp}}\,z-\sigma\,e^{t}\,z-e^{t}\,z+\sigma\,e^{{\it tp}}-e^{{\it tp}}+\sigma\,e^{t}+e^{t}}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>subst(t, tp, charz);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{21}$}z\]</div></div>
+</div>
+<p>Pull off coefficients for typesetting.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(coeff(num(charz), z, 0));
+factor(coeff(num(charz), z, 1));
+factor(coeff(denom(charz), z, 0));
+factor(coeff(denom(charz), z, 1));
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{22}$}\left(\sigma-1\right)\,\left(e^{{\it tp}}-e^{t}\right)\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{23}$}\sigma\,e^{{\it tp}}+e^{{\it tp}}+\sigma\,e^{t}-e^{t}\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{24}$}\sigma\,e^{{\it tp}}-e^{{\it tp}}+\sigma\,e^{t}+e^{t}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{25}$}\left(\sigma+1\right)\,\left(e^{{\it tp}}-e^{t}\right)\]</div></div>
+</div>
+<p>Carry out the integral.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>block([indef],
+    indef : integrate(charz - 1, tp),
+    charint : logcontract (subst(t, tp, indef) - subst(0, tp, indef)));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{26}$}-\frac{\sigma\,\log \left(\frac{e^ {- 2\,t }\,\left(\left(\left(\sigma+1\right)\,e^{t}-\sigma-1\right)\,z+\left(-\sigma-1\right)\,e^{t}-\sigma+1\right)^2}{4\,\sigma^2}\right)+2\,\sigma\,t}{\sigma+1}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>part(charint, 1, 1, 1, 2, 1, 1, 2, 1);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{27}$}\left(\left(\sigma+1\right)\,e^{t}-\sigma-1\right)\,z+\left(-\sigma-1\right)\,e^{t}-\sigma+1\]</div></div>
+</div>
+<p>Re-express it for typesetting.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>logcontract(ev(
+((2 * sigma) / (1 + sigma)) *
+    log((2 * sigma * %e^(-t)) /
+        ((1 + sigma) * (1 - %e^(-t)) * z
+        - 1 - sigma + (1 - sigma) * %e^(-t)))
+        - charint,
+    logexpand = super));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{28}$}0\]</div></div>
+</div>
+<p>Check that it satisfies the original CGF equation.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(homcgfeqn(charint));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{29}$}z-1\]</div></div>
+</div>
 </div>
 </div>
 <div class="section" id="Recovering-the-distribution">
 <h2>Recovering the distribution<a class="headerlink" href="#Recovering-the-distribution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Homogeneous equation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Re-express the generating function in a form that makes it easy to expand as a geometric series.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -656,31 +867,31 @@ cpiece : factor(-coeff(expand(denom(z0sol)), z, 1) /
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{16}$}-\frac{\left(\sigma-1\right)\,\left(e^{t}-1\right)}{\sigma\,e^{t}+e^{t}+\sigma-1}\]</div></div>
+\[\tag{${\it \%o}_{30}$}-\frac{\left(\sigma-1\right)\,\left(e^{t}-1\right)}{\sigma\,e^{t}+e^{t}+\sigma-1}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{17}$}\frac{4\,\sigma^2\,e^{t}}{\left(\sigma\,e^{t}+e^{t}+\sigma-1\right)^2}\]</div></div>
+\[\tag{${\it \%o}_{31}$}\frac{4\,\sigma^2\,e^{t}}{\left(\sigma\,e^{t}+e^{t}+\sigma-1\right)^2}\]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{18}$}\frac{\left(\sigma+1\right)\,\left(e^{t}-1\right)}{\sigma\,e^{t}+e^{t}+\sigma-1}\]</div></div>
+\[\tag{${\it \%o}_{32}$}\frac{\left(\sigma+1\right)\,\left(e^{t}-1\right)}{\sigma\,e^{t}+e^{t}+\sigma-1}\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -689,16 +900,16 @@ cpiece : factor(-coeff(expand(denom(z0sol)), z, 1) /
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{19}$}0\]</div></div>
+\[\tag{${\it \%o}_{33}$}0\]</div></div>
 </div>
 <p>Re-express the generating function in a form that makes it easy to expand as a binomial series.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -707,15 +918,15 @@ cpiece : factor(-coeff(expand(denom(z0sol)), z, 1) /
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{20}$}\left[ 0.55835092287577 , 0.07175632242491108 , 0.8375263843136551 \right] \]</div></div>
+\[\tag{${\it \%o}_{34}$}\left[ 0.55835092287577 , 0.07175632242491108 , 0.8375263843136551 \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -729,31 +940,31 @@ cppi : factor(coeff(expand(num(z0sol)), z, 0) /
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{21}$}-\frac{\sigma\,e^{t}-e^{t}+\sigma+1}{\left(\sigma-1\right)\,\left(e^{t}-1\right)}\]</div></div>
+\[\tag{${\it \%o}_{35}$}-\frac{\sigma\,e^{t}-e^{t}+\sigma+1}{\left(\sigma-1\right)\,\left(e^{t}-1\right)}\]</div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{22}$}\frac{\left(\sigma+1\right)\,\left(e^{t}-1\right)}{\sigma\,e^{t}+e^{t}+\sigma-1}\]</div></div>
+\[\tag{${\it \%o}_{36}$}\frac{\left(\sigma+1\right)\,\left(e^{t}-1\right)}{\sigma\,e^{t}+e^{t}+\sigma-1}\]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{23}$}-\frac{\left(\sigma-1\right)\,\left(e^{t}-1\right)}{\sigma\,e^{t}+e^{t}+\sigma-1}\]</div></div>
+\[\tag{${\it \%o}_{37}$}-\frac{\left(\sigma-1\right)\,\left(e^{t}-1\right)}{\sigma\,e^{t}+e^{t}+\sigma-1}\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -762,16 +973,16 @@ cppi : factor(coeff(expand(num(z0sol)), z, 0) /
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{24}$}0\]</div></div>
+\[\tag{${\it \%o}_{38}$}0\]</div></div>
 </div>
 <p>Compute example numerical values of the Taylor series expansion of <span class="math notranslate nohighlight">\(z_0\)</span></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
@@ -780,12 +991,62 @@ cppi : factor(coeff(expand(num(z0sol)), z, 0) /
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{26}$}0.02957009088969551\,z^6+0.0353064589289661\,z^5+0.04215563782853162\,z^4+0.05033350425500663\,z^3+0.06009781327218061\,z^2+0.07175632242491108\,z+0.5583509228757703\]</div></div>
+\[\tag{${\it \%o}_{39}$}0.02957009088969551\,z^6+0.0353064589289661\,z^5+0.04215563782853162\,z^4+0.05033350425500663\,z^3+0.06009781327218061\,z^2+0.07175632242491108\,z+0.5583509228757703\]</div></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Inhomogeneous equation<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>inhmgfrac :
+((1 + sigma) * (1 - %e^(-t)) * z
+        - 1 - sigma + (1 - sigma) * %e^(-t)) /
+    (2 * sigma * %e^(-t));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{40}$}\frac{e^{t}\,\left(\left(\sigma+1\right)\,\left(1-e^ {- t }\right)\,z+\left(1-\sigma\right)\,e^ {- t }-\sigma-1\right)}{2\,\sigma}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
+<span></span>factor(coeff(expand(inhmgfrac), z, 0));
+factor(-coeff(expand(inhmgfrac), z, 1));
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{41}$}-\frac{\sigma\,e^{t}+e^{t}+\sigma-1}{2\,\sigma}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{42}$}-\frac{\left(\sigma+1\right)\,\left(e^{t}-1\right)}{2\,\sigma}\]</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -830,8 +1091,16 @@ cppi : factor(coeff(expand(num(z0sol)), z, 0) /
 <h3><a href="../index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Exact solulution to the BID process</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Solution-of-the-BID-process-using-the-method-of-characteristics">Solution of the BID process using the method of characteristics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Recovering-the-distribution">Recovering the distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Solution-of-the-BID-process-using-the-method-of-characteristics">Solution of the BID process using the method of characteristics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Homogeneous-equation">Homogeneous equation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Inhomogeneous-equation">Inhomogeneous equation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Recovering-the-distribution">Recovering the distribution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Homogeneous equation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Inhomogeneous equation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../diffusion-approximation/genfunc-bid-diffapprox.html">Generating function analysis of the diffusion approximation to the birth-immigration-death process</a></li>
