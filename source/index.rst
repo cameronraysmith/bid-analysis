@@ -12,5 +12,6 @@
    exact-solution/exact-solution
    diffusion-approximation/genfunc-bid-diffapprox
    diffusion-approximation/bid-diffusion-solution
+   diffusion-approximation/bid-diffusion-solution-dimensionless
    diffusion-approximation/bid-exact-diffusion-comparison
    references
