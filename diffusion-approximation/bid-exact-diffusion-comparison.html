@@ -24,7 +24,7 @@
     <script defer src="../_static/insipid-sidebar.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="References" href="../references.html" />
+    <link rel="next" title="Numerical approximation of the birth-immigration-death process" href="bid-numerical-maxima.html" />
     <link rel="prev" title="Solving the diffusion approximation to the dimensionless birth-immigration-death process" href="bid-diffusion-solution-dimensionless.html" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -54,10 +54,10 @@
         <div id="titlebar">
           <div class="buttons">
             <button id="sidebar-button" type="button" aria-controls="sphinxsidebar" accesskey="M">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
             </button>
             <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
             </button>
           </div>
           <div class="title">
@@ -67,10 +67,10 @@
           <div class="buttons">
             <button id="fullscreen-button" type="button" aria-hidden="true">
               <span class="enable">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
               </span>
               <span class="disable">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
               </span>
             </button>
           </div>
@@ -85,17 +85,17 @@
     </header>
     <nav>
       <a href="bid-diffusion-solution-dimensionless.html" class="nav-icon previous" title="previous:&#13;Solving the diffusion approximation to the dimensionless birth-immigration-death process" aria-label="Previous topic" accesskey="P" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
       </a>
-      <a href="../references.html" class="nav-icon next" title="next:&#13;References" aria-label="Next topic" accesskey="N" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
+      <a href="bid-numerical-maxima.html" class="nav-icon next" title="next:&#13;Numerical approximation of the birth-immigration-death process" aria-label="Next topic" accesskey="N" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
       </a>
     </nav>
 
     <nav class="relbar">
       <a class="previous" href="bid-diffusion-solution-dimensionless.html" aria-label="Previous topic" >
         <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
         </div>
         <div class="title">
           <span class="text">
@@ -104,15 +104,15 @@
           </span>
         </div>
       </a>
-      <a class="next" href="../references.html" aria-label="Next topic" >
+      <a class="next" href="bid-numerical-maxima.html" aria-label="Next topic" >
         <div class="title">
           <span class="text">
             <span class="direction">next</span>
-            References
+            Numerical approximation of the birth-immigration-death process
           </span>
         </div>
         <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
         </div>
       </a>
     </nav>
@@ -332,7 +332,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -388,15 +388,645 @@ div.rendered_html tbody tr:hover {
   </script>
 </div><div class="section" id="Comparing-the-exact-solution-and-diffusion-approximation-to-the-birth-immigration-death-process">
 <h1>Comparing the exact solution and diffusion approximation to the birth-immigration-death process<a class="headerlink" href="#Comparing-the-exact-solution-and-diffusion-approximation-to-the-birth-immigration-death-process" title="Permalink to this headline">¶</a></h1>
-<!-- <center><font size="+4">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</font></center> --><div class="section" id="Diffusion-limit-via-generating-function">
+<!-- <center><font size="+4">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</font></center> --><div class="section" id="Diffusion-limit-via-dimensionless-generating-function">
+<h2>Diffusion limit via dimensionless generating function<a class="headerlink" href="#Diffusion-limit-via-dimensionless-generating-function" title="Permalink to this headline">¶</a></h2>
+<p>Start with the generating function Z(z) for the BD process.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>genfunc(z, tau, n0, sigma) :=
+    (((sigma - 1)*(1 - %e^(-tau)) +
+        (1 - sigma -(1 + sigma) * %e^(-tau)) * z) /
+    (-(1 + sigma) + (1 - sigma) * %e^(-tau) +
+        (1 + sigma) * (1 - %e^(-tau)) * z))^(n0);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{1}$}{\it genfunc}\left(z , \tau , n_{0} , \sigma\right):=\left(\frac{\left(\sigma-1\right)\,\left(1-e^ {- \tau }\right)+\left(1-\sigma+\left(-\left(1+\sigma\right)\right)\,e^ {- \tau }\right)\,z}{-\left(1+\sigma\right)+\left(1-\sigma\right)\,e^ {- \tau }+\left(1+\sigma\right)\,\left(1-e^ {- \tau }\right)\,z}\right)^{n_{0}}\]</div></div>
+</div>
+<p>Reparameterize it in terms of s and epsilon = 1/N.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>geneps : genfunc(%e^(theta * epsilon),
+    tau, 1, s*epsilon);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{2}$}\frac{\left(\left(-\varepsilon\,s-1\right)\,e^ {- \tau }-\varepsilon\,s+1\right)\,e^{\varepsilon\,\vartheta}+\left(\varepsilon\,s-1\right)\,\left(1-e^ {- \tau }\right)}{\left(\varepsilon\,s+1\right)\,\left(1-e^ {- \tau }\right)\,e^{\varepsilon\,\vartheta}+\left(1-\varepsilon\,s\right)\,e^ {- \tau }-\varepsilon\,s-1}\]</div></div>
+</div>
+<p>Expand in powers of epsilon.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cgfexpansion : (x0 / epsilon)*taylor(log(geneps), epsilon, 0, 3);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{3}$}\frac{2\,s\,e^{\tau}\,\vartheta\,x_{0}}{-e^{\tau}\,\vartheta+\vartheta+2\,s}+\frac{\varepsilon^2\,\left(s^2\,\left(e^{2\,\tau}\,\vartheta^4-e^{\tau}\,\vartheta^4\right)+s^3\,\left(2\,e^{3\,\tau}\,\vartheta^3-2\,e^{\tau}\,\vartheta^3\right)\right)\,x_{0}}{-3\,e^{3\,\tau}\,\vartheta^3+9\,e^{2\,\tau}\,\vartheta^3-9\,e^{\tau}\,\vartheta^3+3\,\vartheta^3+s\,\left(18\,e^{2\,\tau}\,\vartheta^2-36\,e^{\tau}\,\vartheta^2+18\,\vartheta^2\right)+s^2\,\left(36\,\vartheta-36\,e^{\tau}\,\vartheta\right)+24\,s^3}\]</div></div>
+</div>
+<p>Collect the zeroth order term, which corresponds to the diffusion approximation and the correction term.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cgfdiff : coeff(cgfexpansion, epsilon, 0);
+cgfcorr : factor(coeff(cgfexpansion, epsilon, 2));
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{4}$}\frac{2\,s\,e^{\tau}\,\vartheta\,x_{0}}{-e^{\tau}\,\vartheta+\vartheta+2\,s}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{5}$}-\frac{s^2\,\left(e^{\tau}-1\right)\,e^{\tau}\,\vartheta^3\,\left(\vartheta+2\,s\,e^{\tau}+2\,s\right)\,x_{0}}{3\,\left(e^{\tau}\,\vartheta-\vartheta-2\,s\right)^3}\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>tex(cgfdiff);
+tex(cgfcorr);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{6}$}\mathbf{false}\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+\[\frac{2\,\vartheta\,e^{\tau}\,s\,x_{0}}{2\,s-\vartheta\,e^{\tau}+
+ \vartheta}\]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{7}$}\mathbf{false}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+\[-\frac{s^2\,\left(e^{\tau}-1\right)\,e^{\tau}\,\vartheta^3\,\left(
+ \vartheta+2\,s\,e^{\tau}+2\,s\right)\,x_{0}}{3\,\left(e^{\tau}\,
+ \vartheta-\vartheta-2\,s\right)^3}\]
+</pre></div></div>
+</div>
+<p>Expand in powers of theta to generate the cumulants.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cumser : taylor(log(genfunc(%e^(theta), tau, n0, sigma)),
+    theta, 0, 4);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{11}$}\frac{n_{0}\,\left(\sigma^2\,\left(3\,e^{4\,\tau}-3\,e^{3\,\tau}-2\,e^{2\,\tau}+2\,e^{\tau}\right)+3\,e^{4\,\tau}-9\,e^{3\,\tau}+9\,e^{2\,\tau}-3\,e^{\tau}\right)\,\vartheta^4}{24\,\sigma^3}+\frac{n_{0}\,\left(\sigma^2\,\left(e^{3\,\tau}-e^{\tau}\right)+3\,e^{3\,\tau}-6\,e^{2\,\tau}+3\,e^{\tau}\right)\,\vartheta^3}{12\,\sigma^2}+\frac{n_{0}\,\left(e^{2\,\tau}-e^{\tau}\right)\,\vartheta^2}{2\,\sigma}+n_{0}\,e^{\tau}\,\vartheta\]</div></div>
+</div>
+<p>Extract the cumulants.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>kappa1 : factor(coeff(cumser, theta, 1));
+kappa2 : factor(coeff(cumser, theta, 2));
+kappa3 : factor(coeff(cumser, theta, 3));
+kappa4 : factor(coeff(cumser, theta, 4));
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{12}$}n_{0}\,e^{\tau}\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{13}$}\frac{n_{0}\,\left(e^{\tau}-1\right)\,e^{\tau}}{2\,\sigma}\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{14}$}\frac{n_{0}\,\left(e^{\tau}-1\right)\,e^{\tau}\,\left(\sigma^2\,e^{\tau}+3\,e^{\tau}+\sigma^2-3\right)}{12\,\sigma^2}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{15}$}\frac{n_{0}\,\left(e^{\tau}-1\right)\,e^{\tau}\,\left(3\,\sigma^2\,e^{2\,\tau}+3\,e^{2\,\tau}-6\,e^{\tau}-2\,\sigma^2+3\right)}{24\,\sigma^3}\]</div></div>
+</div>
+<p>Likewise obtain the cumulants from the rescaled generating function seperated into diffusion approximation and corrections.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>taylor(cgfdiff, theta, 0, 4);
+taylor(cgfcorr, theta, 0, 4);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{16}$}\frac{\left(e^{4\,\tau}-3\,e^{3\,\tau}+3\,e^{2\,\tau}-e^{\tau}\right)\,\vartheta^4\,x_{0}}{8\,s^3}+\frac{\left(e^{3\,\tau}-2\,e^{2\,\tau}+e^{\tau}\right)\,\vartheta^3\,x_{0}}{4\,s^2}+\frac{\left(e^{2\,\tau}-e^{\tau}\right)\,\vartheta^2\,x_{0}}{2\,s}+e^{\tau}\,\vartheta\,x_{0}\]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{17}$}\frac{\left(3\,e^{4\,\tau}-3\,e^{3\,\tau}-2\,e^{2\,\tau}+2\,e^{\tau}\right)\,\vartheta^4\,x_{0}}{24\,s}+\frac{\left(e^{3\,\tau}-e^{\tau}\right)\,\vartheta^3\,x_{0}}{12}\]</div></div>
+</div>
+<p>Form combinations of the cumulants.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>block([R : expand(kappa1 * kappa3 / kappa2^2)],
+    [factor(coeff(R, sigma, 0)),
+    factor(coeff(R, sigma, 1)),
+    factor(coeff(R, sigma, 2))]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{18}$}\left[ 1 , 0 , \frac{e^{\tau}+1}{3\,\left(e^{\tau}-1\right)} \right] \]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>block([R : expand(kappa1^2 * kappa4 / kappa2^3)],
+    [factor(coeff(R, sigma, 0)),
+    factor(coeff(R, sigma, 1)),
+    factor(coeff(R, sigma, 2))]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{19}$}\left[ 1 , 0 , \frac{3\,e^{2\,\tau}-2}{3\,\left(e^{\tau}-1\right)^2} \right] \]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>factor(psubst(solve(y = (x+1)/(x-1), x), (3*x^2 - 2)/(3*(x - 1)^2)));
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{20}$}\frac{y^2+10\,y+1}{12}\]</div></div>
+</div>
+</div>
+<div class="section" id="Plot">
+<h2>Plot<a class="headerlink" href="#Plot" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-lisp notranslate"><div class="highlight"><pre><span></span><span class="nv">plot2d</span><span class="p">(</span><span class="nv">[[parametric,</span> <span class="nv">kap2</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mi">1</span><span class="p">)</span><span class="o">,</span> <span class="nv">kap3</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mi">1</span><span class="p">)</span><span class="o">,</span> <span class="nv">[tau,</span> <span class="mi">0</span><span class="o">,</span> <span class="nv">10]],</span>
+    <span class="nv">[parametric,</span> <span class="nv">kap2</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">,</span> <span class="nv">kap3</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">,</span> <span class="nv">[tau,</span> <span class="mi">0</span><span class="o">,</span> <span class="nv">10]],</span>
+    <span class="nv">[parametric,</span> <span class="nv">kap2</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mi">0</span><span class="p">)</span><span class="o">,</span> <span class="nv">kap3</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span> <span class="nv">tau,</span> <span class="mi">0</span><span class="p">)</span><span class="o">,</span> <span class="nv">[tau,</span> <span class="mi">0</span><span class="o">,</span> <span class="nv">10]]],</span>
+    <span class="nv">[legend,</span> <span class="s">&quot;N=1&quot;</span><span class="o">,</span> <span class="s">&quot;N=2&quot;</span><span class="o">,</span> <span class="s">&quot;N=inf&quot;</span><span class="nv">],</span> <span class="nv">[xlabel,</span> <span class="s">&quot;k_2/k_1^2&quot;</span><span class="nv">],</span>
+    <span class="nv">[ylabel,</span> <span class="s">&quot;k_3/k_1^3&quot;</span><span class="nv">],</span>
+    <span class="nv">[pdf_file,</span> <span class="s">&quot;fig/exact-cumulants-test.pdf&quot;</span><span class="nv">],</span>
+    <span class="nv">[gnuplot_preamble,</span> <span class="s">&quot;set key left&quot;</span><span class="nv">],</span>
+    <span class="nv">[gnuplot_pdf_term_command,</span> <span class="s">&quot;set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font &#39;Latin Modern Roman,20&#39;&quot;</span><span class="nv">]</span><span class="p">)</span><span class="c1">;</span>
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot3d(cos(-x^2+y^3/4),[x,-4,4],[y,-4,4],
+[gnuplot_pm3d,true],[grid,150,150],
+[gnuplot_pdf_term_command, &quot;set view map; unset surface; set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font &#39;Latin Modern Roman,20&#39;&quot;]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+fig/example-contour.pdf
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{25}$}\left[ \mbox{ /tmp/maxout81.gnuplot } , \mbox{ fig/example-contour.pdf } \right] \]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d([contour, sigma^2*(3*%e^(2*tau)-2)/(3*(%e^tau-1)^2)],
+    [sigma, 0, 1], [tau, 0.02, 0.25], [levels, 100],
+    [legend, false], [title, &quot;fourth moment&quot;],
+    [pdf_file, &quot;fig/example-contour.tex&quot;],
+    [gnuplot_pdf_term_command, &quot;set term epslatex standalone lw 3 size 17.2 cm, 12.9 cm font &#39;Latin Modern Roman,20&#39;&quot;]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+% GNUPLOT: LaTeX picture with Postscript
+\documentclass{minimal}
+% Set font size
+\makeatletter
+\def\&#64;ptsize{10}
+\InputIfFileExists{size20.clo}{}{%
+   \GenericError{(gnuplot) \space\space\space\&#64;spaces}{%
+      Gnuplot Error: File `size20.clo' not found! Could not set font size%
+   }{See the gnuplot documentation for explanation.%
+   }{For using a font size a file `size&lt;fontsize&gt;.clo' has to exist.
+        Falling back ^^Jto default fontsize 10pt.}%
+  \def\&#64;ptsize{0}
+  \input{size10.clo}%
+}%
+\makeatother
+\renewcommand*\rmdefault{Latin-Modern-Roman}%
+% Load packages
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{color}
+\makeatletter
+% Select an appropriate default driver (from TeXLive graphics.cfg)
+\begingroup
+  \chardef\x=0 %
+  % check pdfTeX
+  \&#64;ifundefined{pdfoutput}{}{%
+    \ifcase\pdfoutput
+    \else
+      \chardef\x=1 %
+    \fi
+  }%
+  % check VTeX
+  \&#64;ifundefined{OpMode}{}{%
+    \chardef\x=2 %
+  }%
+\expandafter\endgroup
+\ifcase\x
+  % default case
+  \PassOptionsToPackage{dvips}{geometry}
+\or
+  % pdfTeX is running in pdf mode
+  \PassOptionsToPackage{pdftex}{geometry}
+\else
+  % VTeX is running
+  \PassOptionsToPackage{vtex}{geometry}
+\fi
+\makeatother
+% Set papersize
+\usepackage[papersize={487.50bp,365.60bp},text={487.50bp,365.60bp}]{geometry}
+% No page numbers and no paragraph indentation
+\pagestyle{empty}
+\setlength{\parindent}{0bp}%
+% Load configuration file
+\InputIfFileExists{gnuplot.cfg}{%
+  \typeout{Using configuration file gnuplot.cfg}%
+}{%
+ \typeout{No configuration file gnuplot.cfg found.}%
+}%
+%
+\begin{document}
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \GenericError{(gnuplot) \space\space\space\&#64;spaces}{%
+      Package color not loaded in conjunction with
+      terminal option `colourtext'%
+    }{See the gnuplot documentation for explanation.%
+    }{Either use 'blacktext' in gnuplot or load the package
+      color.sty in LaTeX.}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\includegraphics[2][]{%
+    \GenericError{(gnuplot) \space\space\space\&#64;spaces}{%
+      Package graphicx or graphics not loaded%
+    }{See the gnuplot documentation for explanation.%
+    }{The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.}%
+    \renewcommand\includegraphics[2][]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \&#64;ifundefined{ifGPcolor}{%
+    \newif\ifGPcolor
+    \GPcolorfalse
+  }{}%
+  \&#64;ifundefined{ifGPblacktext}{%
+    \newif\ifGPblacktext
+    \GPblacktexttrue
+  }{}%
+  % define a \g&#64;addto&#64;macro without &#64; in the name:
+  \let\gplgaddtomacro\g&#64;addto&#64;macro
+  % define empty templates for all commands taking text:
+  \gdef\gplbacktext{}%
+  \gdef\gplfronttext{}%
+  \makeatother
+  \ifGPblacktext
+    % no textcolor at all
+    \def\colorrgb#1{}%
+    \def\colorgray#1{}%
+  \else
+    % gray or color?
+    \ifGPcolor
+      \def\colorrgb#1{\color[rgb]{#1}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color[rgb]{1,0,0}}%
+      \expandafter\def\csname LT1\endcsname{\color[rgb]{0,1,0}}%
+      \expandafter\def\csname LT2\endcsname{\color[rgb]{0,0,1}}%
+      \expandafter\def\csname LT3\endcsname{\color[rgb]{1,0,1}}%
+      \expandafter\def\csname LT4\endcsname{\color[rgb]{0,1,1}}%
+      \expandafter\def\csname LT5\endcsname{\color[rgb]{1,1,0}}%
+      \expandafter\def\csname LT6\endcsname{\color[rgb]{0,0,0}}%
+      \expandafter\def\csname LT7\endcsname{\color[rgb]{1,0.3,0}}%
+      \expandafter\def\csname LT8\endcsname{\color[rgb]{0.5,0.5,0.5}}%
+    \else
+      % gray
+      \def\colorrgb#1{\color{black}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color{black}}%
+      \expandafter\def\csname LT1\endcsname{\color{black}}%
+      \expandafter\def\csname LT2\endcsname{\color{black}}%
+      \expandafter\def\csname LT3\endcsname{\color{black}}%
+      \expandafter\def\csname LT4\endcsname{\color{black}}%
+      \expandafter\def\csname LT5\endcsname{\color{black}}%
+      \expandafter\def\csname LT6\endcsname{\color{black}}%
+      \expandafter\def\csname LT7\endcsname{\color{black}}%
+      \expandafter\def\csname LT8\endcsname{\color{black}}%
+    \fi
+  \fi
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+    \definecolor{tbcol}{rgb}{1,1,1}%
+\begin{picture}(9750.00,7312.00)%
+    \gplgaddtomacro\gplbacktext{%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%%
+      \put(694,3695){\rotatebox{-270}{\makebox(0,0){\strut{}tau}}}%
+      \put(5494,280){\makebox(0,0){\strut{}sigma}}%
+      \csname LTb\endcsname%%
+      \put(2034,1910){\makebox(0,0)[r]{\strut{}$0.05$}}%
+      \put(2034,2960){\makebox(0,0)[r]{\strut{}$0.1$}}%
+      \put(2034,4011){\makebox(0,0)[r]{\strut{}$0.15$}}%
+      \put(2034,5061){\makebox(0,0)[r]{\strut{}$0.2$}}%
+      \put(2034,6111){\makebox(0,0)[r]{\strut{}$0.25$}}%
+      \put(2274,880){\makebox(0,0){\strut{}$0$}}%
+      \put(3562,880){\makebox(0,0){\strut{}$0.2$}}%
+      \put(4850,880){\makebox(0,0){\strut{}$0.4$}}%
+      \put(6139,880){\makebox(0,0){\strut{}$0.6$}}%
+      \put(7427,880){\makebox(0,0){\strut{}$0.8$}}%
+      \put(8715,880){\makebox(0,0){\strut{}$1$}}%
+      \csname LTb\endcsname%%
+      \put(5494,6711){\makebox(0,0){\strut{}fourth moment}}%
+    }%
+    \gplbacktext
+    \put(0,0){\includegraphics[width={487.50bp},height={365.60bp}]{fig/example-contour-inc}}%
+    \gplfronttext
+  \end{picture}%
+\endgroup
+\end{document}</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{22}$}\left[ \mbox{ /tmp/maxout163.gnuplot } , \mbox{ fig/example-contour.tex } \right] \]</div></div>
+</div>
+<div class="section" id="Absorbing-boundary">
+<h3>Absorbing boundary<a class="headerlink" href="#Absorbing-boundary" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>genfunc(0, tau, x0/epsilon, s*epsilon);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{1}$}{\it genfunc}\left(0 , \tau , \frac{x_{0}}{\varepsilon} , \varepsilon\,s\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>taylor(genfunc(0, tau, 1, s*epsilon), epsilon, 0, 2);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{2}$}\frac{\left(\left.\frac{d^2}{d\,\varepsilon^2}\,{\it genfunc}\left(0 , \tau , 1 , \varepsilon\,s\right)\right|_{\varepsilon=0}\right)\,\varepsilon^2}{2}+\left(\left.\frac{d}{d\,\varepsilon}\,{\it genfunc}\left(0 , \tau , 1 , \varepsilon\,s\right)\right|_{\varepsilon=0}\right)\,\varepsilon+{\it genfunc}\left(0 , \tau , 1 , 0\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>genfunc(0, tau, n0, sigma);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{3}$}{\it genfunc}\left(0 , \tau , n_{0} , \sigma\right)\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>taylor((1 + s*epsilon)/(1 - s*epsilon), s, 0, 2);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{4}$}2\,\varepsilon^2\,s^2+2\,\varepsilon\,s+1\]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d([(1 - %e^(-tau))/(3 - %e^(-tau)),
+        (1 - %e^(-tau))/(1.5 - %e^(-tau)),
+        (1 - %e^(-tau))/(11/9 - %e^(-tau))], [tau, 0.1, 3],
+    [legend, &quot;sigma = 0.3&quot;, &quot;sigma = 0.2&quot;, &quot;sigma = 0.1&quot;],
+    [title, &quot;P(0, tau) for n_0 = 0&quot;],
+    [pdf_file, &quot;fig/p0n0.pdf&quot;],
+    [gnuplot_pdf_term_command, &quot;set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font &#39;Latin Modern Roman,20&#39;&quot;]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+fig/p0n0.pdf
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{9}$}\left[ \mbox{ /tmp/maxout163.gnuplot } , \mbox{ fig/p0n0.pdf } \right] \]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d([((1 - %e^(-tau))/(11/9 - %e^(-tau)))^10,
+        %e^(-2/(1 - %e^(-tau)))], [tau, 0.1, 3],
+    [legend, &quot;sigma = 0.1, n_0 = 10&quot;, &quot;diffusion&quot;],
+    [pdf_file, &quot;fig/p0n10.pdf&quot;],
+    [gnuplot_pdf_term_command, &quot;set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font &#39;Latin Modern Roman,20&#39;&quot;]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+fig/p0n10.pdf
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{10}$}\left[ \mbox{ /tmp/maxout163.gnuplot } , \mbox{ fig/p0n10.pdf } \right] \]</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Diffusion-limit-via-generating-function">
 <h2>Diffusion limit via generating function<a class="headerlink" href="#Diffusion-limit-via-generating-function" title="Permalink to this headline">¶</a></h2>
 <p>Define the moment generating function.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>genfunc (x, t, n0, kb, kd) :=
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>genfunc (x, t, n0, kb, kd) :=
     ((kd * %e^(- (kb - kd) * t) - kd +
         (kd - kb * %e^(- (kb - kd) * t)) * x) /
         (kd * %e^(- (kb - kd) * t) - kb +
@@ -417,8 +1047,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>genreparam : factor(genfunc(%e^(-theta), tau*N, N * x0, D + s/(2*N), D - s/(2*N)));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>genreparam : factor(genfunc(%e^(-theta), tau*N, N * x0, D + s/(2*N), D - s/(2*N)));
 </pre></div>
 </div>
 </div>
@@ -435,8 +1064,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>geneps : genfunc(%e^(-theta * epsilon), tau / epsilon, 1,
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>geneps : genfunc(%e^(-theta * epsilon), tau / epsilon, 1,
     D + s * epsilon/2, D - s* epsilon /2);
 </pre></div>
 </div>
@@ -454,8 +1082,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>cgfexpansion : (x0/epsilon)*taylor(log(geneps), epsilon, 0, 3);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cgfexpansion : (x0/epsilon)*taylor(log(geneps), epsilon, 0, 3);
 </pre></div>
 </div>
 </div>
@@ -471,8 +1098,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>coeff(cgfexpansion, epsilon, 0);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>coeff(cgfexpansion, epsilon, 0);
 </pre></div>
 </div>
 </div>
@@ -488,8 +1114,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>texput(theta, &quot;\\theta&quot;);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>texput(theta, &quot;\\theta&quot;);
 texput(tau, &quot;(\\tau - \\tau_{0})&quot;);
 </pre></div>
 </div>
@@ -498,8 +1123,7 @@ texput(tau, &quot;(\\tau - \\tau_{0})&quot;);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>tex(genreparam);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>tex(genreparam);
 </pre></div>
 </div>
 </div>
@@ -507,8 +1131,7 @@ texput(tau, &quot;(\\tau - \\tau_{0})&quot;);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>tex(factor(coeff(cgfexpansion, epsilon, 0)));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>tex(factor(coeff(cgfexpansion, epsilon, 0)));
 </pre></div>
 </div>
 </div>
@@ -516,8 +1139,7 @@ texput(tau, &quot;(\\tau - \\tau_{0})&quot;);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>tex(factor(coeff(cgfexpansion, epsilon, 2)));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>tex(factor(coeff(cgfexpansion, epsilon, 2)));
 </pre></div>
 </div>
 </div>
@@ -525,8 +1147,7 @@ texput(tau, &quot;(\\tau - \\tau_{0})&quot;);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>tex(factor(coeff(cgfexpansion, epsilon, 4)));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>tex(factor(coeff(cgfexpansion, epsilon, 4)));
 </pre></div>
 </div>
 </div>
@@ -537,8 +1158,7 @@ texput(tau, &quot;(\\tau - \\tau_{0})&quot;);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>numop(n, gf) :=
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>numop(n, gf) :=
     if n=0 then gf
         else numop(n-1, z * diff(gf, z))$
 cumu(m, t, n0, kb, kd) :=
@@ -551,8 +1171,7 @@ cumu(m, t, n0, kb, kd) :=
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>cumu(0, t, n0, kb, kd);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cumu(0, t, n0, kb, kd);
 </pre></div>
 </div>
 </div>
@@ -568,8 +1187,7 @@ cumu(m, t, n0, kb, kd) :=
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>cumu(1, t, n0, kb, kd);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cumu(1, t, n0, kb, kd);
 cumu(2, t, n0, kb, kd);
 cumu(3, t, n0, kb, kd);
 cumu(4, t, n0, kb, kd);
@@ -614,8 +1232,7 @@ cumu(4, t, n0, kb, kd);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>difcum1 : taylor(epsilon * cumu(1, t / epsilon, x0 / epsilon,
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>difcum1 : taylor(epsilon * cumu(1, t / epsilon, x0 / epsilon,
         D + s * epsilon / 2, D - s * epsilon / 2), epsilon, 0, 2);
 difcum2 : taylor(epsilon^2 * cumu(2, t / epsilon, x0 / epsilon,
         D + s * epsilon / 2, D - s * epsilon / 2), epsilon, 0, 2);
@@ -662,8 +1279,7 @@ difcum4 : taylor(epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>difcum1first : factor(taylor(epsilon * cumu(1, t / epsilon, x0 / epsilon,
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>difcum1first : factor(taylor(epsilon * cumu(1, t / epsilon, x0 / epsilon,
         D + s * epsilon / 2, D - s * epsilon / 2), epsilon, 0, 1));
 difcum2first : factor(taylor(epsilon^2 * cumu(2, t / epsilon, x0 / epsilon,
         D + s * epsilon / 2, D - s * epsilon / 2), epsilon, 0, 1));
@@ -710,8 +1326,7 @@ difcum4first : factor(taylor(epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>difcum1 : subst(0, epsilon, epsilon * cumu(1, t / epsilon, x0 / epsilon,
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>difcum1 : subst(0, epsilon, epsilon * cumu(1, t / epsilon, x0 / epsilon,
         D + s * epsilon / 2, D - s * epsilon / 2));
 difcum2 : subst(0, epsilon, epsilon^2 * cumu(2, t / epsilon, x0 / epsilon,
         D + s * epsilon / 2, D - s * epsilon / 2));
@@ -761,8 +1376,7 @@ difcum4 : subst(0, epsilon, epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>factor(coeff(difcum3, epsilon, 2));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>factor(coeff(difcum3, epsilon, 2));
 </pre></div>
 </div>
 </div>
@@ -778,8 +1392,7 @@ difcum4 : subst(0, epsilon, epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>factor(coeff(difcum4, epsilon, 2));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>factor(coeff(difcum4, epsilon, 2));
 </pre></div>
 </div>
 </div>
@@ -798,8 +1411,7 @@ difcum4 : subst(0, epsilon, epsilon^4 * cumu(4, t / epsilon, x0 / epsilon,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>factor(2 * difcum3 * difcum1 - 3 * difcum2^2);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>factor(2 * difcum3 * difcum1 - 3 * difcum2^2);
 factor(difcum4 * difcum1^2 - 3 * difcum2^3 );
 </pre></div>
 </div>
@@ -829,8 +1441,7 @@ factor(difcum4 * difcum1^2 - 3 * difcum2^3 );
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>frac1 : (kb - kd * %e^(-(kb-kd)*t)) / ((kb - kd) * %e^(-(kb-kd)*t));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>frac1 : (kb - kd * %e^(-(kb-kd)*t)) / ((kb - kd) * %e^(-(kb-kd)*t));
 frac2 : (kb - kb * %e^(-(kb-kd)*t)) / (kb - kd * %e^(-(kb-kd)*t));
 </pre></div>
 </div>
@@ -855,8 +1466,7 @@ frac2 : (kb - kb * %e^(-(kb-kd)*t)) / (kb - kd * %e^(-(kb-kd)*t));
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>inhfrac : frac1 * (1 - frac2 * %e^(theta * epsilon));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>inhfrac : frac1 * (1 - frac2 * %e^(theta * epsilon));
 </pre></div>
 </div>
 </div>
@@ -872,8 +1482,7 @@ frac2 : (kb - kb * %e^(-(kb-kd)*t)) / (kb - kd * %e^(-(kb-kd)*t));
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac1);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac1);
 psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac2);
 </pre></div>
 </div>
@@ -898,8 +1507,7 @@ psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac2);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], inhfrac);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], inhfrac);
 </pre></div>
 </div>
 </div>
@@ -915,8 +1523,7 @@ psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac2);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>inhgenf : psubst([kb = D + s * epsilon/2, kd = D - s * epsilon/2,
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>inhgenf : psubst([kb = D + s * epsilon/2, kd = D - s * epsilon/2,
          t = tau/epsilon], (M/kb) * log(inhfrac));
 </pre></div>
 </div>
@@ -933,8 +1540,7 @@ psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac2);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>inhgenser : taylor(psubst([kb = D + s * epsilon/2, kd = D - s * epsilon/2,
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>inhgenser : taylor(psubst([kb = D + s * epsilon/2, kd = D - s * epsilon/2,
          t = tau/epsilon], (M/kb) * log(inhfrac)), epsilon, 0, 2);
 </pre></div>
 </div>
@@ -951,8 +1557,7 @@ psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac2);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>logcontract(coeff(inhgenser, epsilon, 0));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>logcontract(coeff(inhgenser, epsilon, 0));
 </pre></div>
 </div>
 </div>
@@ -968,8 +1573,7 @@ psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac2);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>logcontract(coeff(inhgenser, epsilon, 1));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>logcontract(coeff(inhgenser, epsilon, 1));
 </pre></div>
 </div>
 </div>
@@ -985,8 +1589,7 @@ psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac2);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>expand(logcontract(coeff(inhgenser, epsilon, 1)));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>expand(logcontract(coeff(inhgenser, epsilon, 1)));
 </pre></div>
 </div>
 </div>
@@ -1002,8 +1605,7 @@ psubst([kb = D + s/(2*N), kd = D - s/(2*N), t = N*tau], frac2);
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>piece1 : (D*M*s*%e^(s*tau)*theta*log(-s/(D*%e^(s*tau)*theta-D*theta-s)))/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)+(D*M*s*theta*log(-(D*%e^(s*tau)*theta)/s+(D*theta)/s+1))/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)+(M*s^2*log(-(D*%e^(s*tau)*theta)/s+(D*theta)/s+1))/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>piece1 : (D*M*s*%e^(s*tau)*theta*log(-s/(D*%e^(s*tau)*theta-D*theta-s)))/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)+(D*M*s*theta*log(-(D*%e^(s*tau)*theta)/s+(D*theta)/s+1))/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)+(M*s^2*log(-(D*%e^(s*tau)*theta)/s+(D*theta)/s+1))/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s);
 piece2 : (D^2*M*%e^(s*tau)*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)-(D^2*M*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)+(D*M*s*%e^(s*tau)*theta)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)-(D*M*s*theta)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s);
 </pre></div>
 </div>
@@ -1028,8 +1630,7 @@ piece2 : (D^2*M*%e^(s*tau)*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>factor(piece1);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>factor(piece1);
 </pre></div>
 </div>
 </div>
@@ -1045,8 +1646,7 @@ piece2 : (D^2*M*%e^(s*tau)*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>factor(piece2);
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>factor(piece2);
 </pre></div>
 </div>
 </div>
@@ -1062,8 +1662,7 @@ piece2 : (D^2*M*%e^(s*tau)*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>(M*s/(2*D^2*(D*%e^(s*tau)*theta-D*theta-s))) *
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>(M*s/(2*D^2*(D*%e^(s*tau)*theta-D*theta-s))) *
 (- D * %e^(s*\tau) * theta + D*theta + s);
 </pre></div>
 </div>
@@ -1080,8 +1679,7 @@ piece2 : (D^2*M*%e^(s*tau)*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>factor((M*s/(2*D^2*(D*%e^(s*tau)*theta-D*theta-s))) *
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>factor((M*s/(2*D^2*(D*%e^(s*tau)*theta-D*theta-s))) *
 (- D * %e^(s*\tau) * theta + D*theta + s));
 </pre></div>
 </div>
@@ -1098,8 +1696,7 @@ piece2 : (D^2*M*%e^(s*tau)*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>inhgenexpanded : expand(taylor(inhgenser, theta, 0, 4));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>inhgenexpanded : expand(taylor(inhgenser, theta, 0, 4));
 </pre></div>
 </div>
 </div>
@@ -1115,8 +1712,7 @@ piece2 : (D^2*M*%e^(s*tau)*theta^2)/(2*D^3*%e^(s*tau)*theta-2*D^3*theta-2*D^2*s)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>kap1 : factor(coeff(inhgenexpanded, theta, 1));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>kap1 : factor(coeff(inhgenexpanded, theta, 1));
 kap2 : factor(coeff(coeff(inhgenexpanded, theta, 2), epsilon, 0)) +
     (1/N) * factor(coeff(coeff(inhgenexpanded, theta, 2), epsilon, 1));
 kap3 : factor(coeff(coeff(inhgenexpanded, theta, 3), epsilon, 0)) +
@@ -1165,8 +1761,7 @@ kap4 : factor(coeff(coeff(inhgenexpanded, theta, 4), epsilon, 0)) +
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>kap2 (D, tau, epsilon) := 2* D * (1 - %e^(-tau));
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>kap2 (D, tau, epsilon) := 2* D * (1 - %e^(-tau));
 kap3 (D, tau, epsilon) := 6* D^2 * (1 - %e^(-tau))^2 +
     (epsilon/2) * (1 - %e^(-2*tau));
 </pre></div>
@@ -1192,8 +1787,7 @@ kap3 (D, tau, epsilon) := 6* D^2 * (1 - %e^(-tau))^2 +
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre>
-<span></span>plot2d([[parametric, kap2(1, tau, 1), kap3(1, tau, 1), [tau, 0, 10]],
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d([[parametric, kap2(1, tau, 1), kap3(1, tau, 1), [tau, 0, 10]],
     [parametric, kap2(1, tau, 0.5), kap3(1, tau, 0.5), [tau, 0, 10]],
     [parametric, kap2(1, tau, 0), kap3(1, tau, 0), [tau, 0, 10]]],
     [legend, &quot;N=1&quot;, &quot;N=2&quot;, &quot;N=inf&quot;], [xlabel, &quot;k_2/k_1^2&quot;],
@@ -1242,7 +1836,7 @@ fig/exact-cumulants-test.pdf
     <nav class="relbar">
       <a class="previous" href="bid-diffusion-solution-dimensionless.html" aria-label="Previous topic" >
         <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
         </div>
         <div class="title">
           <span class="text">
@@ -1251,15 +1845,15 @@ fig/exact-cumulants-test.pdf
           </span>
         </div>
       </a>
-      <a class="next" href="../references.html" aria-label="Next topic" >
+      <a class="next" href="bid-numerical-maxima.html" aria-label="Next topic" >
         <div class="title">
           <span class="text">
             <span class="direction">next</span>
-            References
+            Numerical approximation of the birth-immigration-death process
           </span>
         </div>
         <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
         </div>
       </a>
     </nav>
@@ -1277,6 +1871,11 @@ fig/exact-cumulants-test.pdf
 <li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution.html">Solving the diffusion approximation to the birth-immigration-death process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bid-diffusion-solution-dimensionless.html">Solving the diffusion approximation to the dimensionless birth-immigration-death process</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Diffusion-limit-via-dimensionless-generating-function">Diffusion limit via dimensionless generating function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Plot">Plot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Absorbing-boundary">Absorbing boundary</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#Diffusion-limit-via-generating-function">Diffusion limit via generating function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Compute-cumulants-for-exact-and-diffusion-of-the-BD-process">Compute cumulants for exact and diffusion of the BD process</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#First-order-terms">First order terms</a></li>
@@ -1288,6 +1887,7 @@ fig/exact-cumulants-test.pdf
 <li class="toctree-l2"><a class="reference internal" href="#Compare-exact-and-approximate-cumulants">Compare exact and approximate cumulants</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="bid-numerical-maxima.html">Numerical approximation of the birth-immigration-death process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 
