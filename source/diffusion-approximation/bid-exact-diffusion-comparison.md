@@ -5,7 +5,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.11.4
+      jupytext_version: 1.13.6
   kernelspec:
     display_name: Maxima
     language: maxima
@@ -16,6 +16,153 @@ jupyter:
 
 <!-- <center><font size="+4">Comparing the exact solution and diffusion approximation to the birth-immigration-death process</font></center> -->
 
+
+## Diffusion limit via dimensionless generating function
+
+
+Start with the generating function Z(z) for the BD process. 
+
+```maxima
+genfunc(z, tau, n0, sigma) :=
+    (((sigma - 1)*(1 - %e^(-tau)) +
+        (1 - sigma -(1 + sigma) * %e^(-tau)) * z) / 
+    (-(1 + sigma) + (1 - sigma) * %e^(-tau) +
+        (1 + sigma) * (1 - %e^(-tau)) * z))^(n0);
+```
+
+Reparameterize it in terms of s and epsilon = 1/N.
+
+```maxima
+geneps : genfunc(%e^(theta * epsilon), 
+    tau, 1, s*epsilon);
+```
+
+Expand in powers of epsilon.
+
+```maxima
+cgfexpansion : (x0 / epsilon)*taylor(log(geneps), epsilon, 0, 3);
+```
+
+Collect the zeroth order term, which corresponds to the diffusion approximation and the correction term.
+
+```maxima
+cgfdiff : coeff(cgfexpansion, epsilon, 0);
+cgfcorr : factor(coeff(cgfexpansion, epsilon, 2));
+```
+
+```maxima
+tex(cgfdiff);
+tex(cgfcorr);
+```
+
+Expand in powers of theta to generate the cumulants.
+
+```maxima
+cumser : taylor(log(genfunc(%e^(theta), tau, n0, sigma)),
+    theta, 0, 4);
+```
+
+Extract the cumulants.
+
+```maxima
+kappa1 : factor(coeff(cumser, theta, 1));
+kappa2 : factor(coeff(cumser, theta, 2));
+kappa3 : factor(coeff(cumser, theta, 3));
+kappa4 : factor(coeff(cumser, theta, 4));
+```
+
+Likewise obtain the cumulants from the rescaled generating function seperated into diffusion approximation and corrections.
+
+```maxima
+taylor(cgfdiff, theta, 0, 4);
+taylor(cgfcorr, theta, 0, 4);
+```
+
+Form combinations of the cumulants.
+
+```maxima tags=[]
+block([R : expand(kappa1 * kappa3 / kappa2^2)],
+    [factor(coeff(R, sigma, 0)),
+    factor(coeff(R, sigma, 1)),
+    factor(coeff(R, sigma, 2))]);
+```
+
+```maxima tags=[]
+block([R : expand(kappa1^2 * kappa4 / kappa2^3)],
+    [factor(coeff(R, sigma, 0)),
+    factor(coeff(R, sigma, 1)),
+    factor(coeff(R, sigma, 2))]);
+```
+
+```maxima tags=[]
+factor(psubst(solve(y = (x+1)/(x-1), x), (3*x^2 - 2)/(3*(x - 1)^2)));
+```
+
+## Plot
+
+
+```lisp
+plot2d([[parametric, kap2(1, tau, 1), kap3(1, tau, 1), [tau, 0, 10]],
+    [parametric, kap2(1, tau, 0.5), kap3(1, tau, 0.5), [tau, 0, 10]],
+    [parametric, kap2(1, tau, 0), kap3(1, tau, 0), [tau, 0, 10]]],
+    [legend, "N=1", "N=2", "N=inf"], [xlabel, "k_2/k_1^2"],
+    [ylabel, "k_3/k_1^3"],
+    [pdf_file, "fig/exact-cumulants-test.pdf"],
+    [gnuplot_preamble, "set key left"],
+    [gnuplot_pdf_term_command, "set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,20'"]);
+```
+
+```maxima tags=[]
+plot3d(cos(-x^2+y^3/4),[x,-4,4],[y,-4,4],
+[gnuplot_pm3d,true],[grid,150,150],
+[gnuplot_pdf_term_command, "set view map; unset surface; set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,20'"]);
+```
+
+```maxima tags=[]
+plot2d([contour, sigma^2*(3*%e^(2*tau)-2)/(3*(%e^tau-1)^2)], 
+    [sigma, 0, 1], [tau, 0.02, 0.25], [levels, 100],
+    [legend, false], [title, "fourth moment"],
+    [pdf_file, "fig/example-contour.tex"],
+    [gnuplot_pdf_term_command, "set term epslatex standalone lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,20'"]);
+```
+
+<!-- #region tags=[] -->
+### Absorbing boundary
+<!-- #endregion -->
+
+```maxima
+genfunc(0, tau, x0/epsilon, s*epsilon);
+```
+
+```maxima
+taylor(genfunc(0, tau, 1, s*epsilon), epsilon, 0, 2);
+```
+
+```maxima
+genfunc(0, tau, n0, sigma);
+```
+
+```maxima
+taylor((1 + s*epsilon)/(1 - s*epsilon), s, 0, 2);
+```
+
+```maxima tags=[]
+plot2d([(1 - %e^(-tau))/(3 - %e^(-tau)),
+        (1 - %e^(-tau))/(1.5 - %e^(-tau)),
+        (1 - %e^(-tau))/(11/9 - %e^(-tau))], [tau, 0.1, 3],
+    [legend, "sigma = 0.3", "sigma = 0.2", "sigma = 0.1"],
+    [title, "P(0, tau) for n_0 = 0"],
+    [pdf_file, "fig/p0n0.pdf"],
+    [gnuplot_pdf_term_command, "set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,20'"]);
+```
+
+```maxima tags=[]
+plot2d([((1 - %e^(-tau))/(11/9 - %e^(-tau)))^10,
+        %e^(-2/(1 - %e^(-tau)))], [tau, 0.1, 3],
+    [legend, "sigma = 0.1, n_0 = 10", "diffusion"],
+    [pdf_file, "fig/p0n10.pdf"],
+    [gnuplot_pdf_term_command, "set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,20'"]);
+```
 
 ## Diffusion limit via generating function
 
