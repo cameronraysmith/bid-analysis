@@ -14,4 +14,5 @@
    diffusion-approximation/bid-diffusion-solution
    diffusion-approximation/bid-diffusion-solution-dimensionless
    diffusion-approximation/bid-exact-diffusion-comparison
+   diffusion-approximation/bid-numerical-maxima
    references
