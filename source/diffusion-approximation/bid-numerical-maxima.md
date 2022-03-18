@@ -5,7 +5,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.13.6
+      jupytext_version: 1.13.7
   kernelspec:
     display_name: Maxima
     language: maxima
@@ -128,12 +128,13 @@ plot2d([[discrete, rescaled_exact(1, 1.0, 0.33, 5, 50)],
     [discrete, rescaled_exact(2, 1.0, 0.33, 5, 50)],
     [discrete, rescaled_exact(3, 1.0, 0.33, 5, 50)],
     [discrete, rescaled_exact(4, 1.0, 0.33, 5, 50)],
-    0.66 * diff_dist(0.66*x, 1.0, 0.66*5.0)], [x, 0.1, 50.0],
+    0.66 * diff_dist(0.66*x, 1.0, 0.66*5.0)], [x, 4, 15], [y, 0.04, 0.0535],
     [legend, "N=1", "N=2", "N=3", "N=4", "diffusion"],
-    [title, "tau = 1.0, s = 0.33, x_0 = 5"],
+    [title, "𝜏 = 1.0, s = 0.33, x₀ = 5"],
+    [color, "#1F654C", "#226F54", "#559972", "#6EAE81", "#87C38F", "#BEDAA5"],
     [pdf_file, "fig/rescaled-exact.pdf"],
-    [gnuplot_preamble, "set key right"],
-    [gnuplot_pdf_term_command, "set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,20'"]);
+    [gnuplot_preamble, "set key center bottom"],
+    [gnuplot_pdf_term_command, "set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,23'"]);
 ```
 
 ## Fix first two moments and vary sigma
@@ -293,21 +294,21 @@ plot2d ([(sigma^2/3) * coth(tau/2) = 0.25,
         [ylabel, "t"],
         [pdf_file, "fig/contour-plot-01.pdf"],
         [gnuplot_preamble, "
-set label '0.25' at 0.3, 0.4 
-set label '0.5' at 0.45, 0.37
-set label '1.0' at 0.6, 0.3
-set label '2.0' at 0.72, 0.21
-set label '4.0' at 0.8, 0.14
-set label '8.0' at 0.85, 0.08
+set label '0.25' at 0.27, 0.4 front tc rgb '#1F654C'
+set label '0.5' at 0.44, 0.37 front tc rgb '#226F54'
+set label '1.0' at 0.57, 0.3 front tc rgb '#559972'
+set label '2.0' at 0.69, 0.21 front tc rgb '#6EAE81'
+set label '4.0' at 0.8, 0.14 front tc rgb '#87C38F'
+set label '8.0' at 0.87, 0.09 front tc rgb '#BEDAA5'
 set object circle at 0.2, 0.02 size 0.005 front fillstyle solid 1.0 fc rgb '#5B5B5B'
-set label 'A' at 0.21, 0.02 front tc rgb '#5B5B5B'
+set label 'A' at 0.21, 0.03 front tc rgb '#5B5B5B'
 set object circle at 0.8, 0.08 size 0.005 fillstyle solid 1.0 fc rgb '#5B5B5B'
 set label 'B' at 0.81, 0.08 front tc rgb '#5B5B5B'
 set object circle at 0.2, 0.2 size 0.005 fillstyle solid 1.0 fc rgb '#5B5B5B'
 set label 'C' at 0.21, 0.2 front tc rgb '#5B5B5B'
 set object circle at 0.8, 0.2 size 0.005 fillstyle solid 1.0 fc rgb '#5B5B5B'
 set label 'D' at 0.81, 0.2 front tc rgb '#5B5B5B'"],
-        [gnuplot_pdf_term_command, "set term pdfcairo enhanced lw 3.5 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,23'"]);
+        [gnuplot_pdf_term_command, "set term pdfcairo enhanced lw 3.5 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,27'"]);
 ```
 
 ## BID
