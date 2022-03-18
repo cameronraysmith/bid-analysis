@@ -137,6 +137,28 @@ plot2d([[discrete, rescaled_exact(1, 1.0, 0.33, 5, 50)],
     [gnuplot_pdf_term_command, "set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,23'"]);
 ```
 
+```maxima tags=[]
+tau: 0.0808;
+s: 0.808;
+
+/* rescaled_exact(N, tau, s, x0, xmax) */ 
+plot2d([[discrete, rescaled_exact(1, tau, s, 5, 50)],
+    [discrete, rescaled_exact(5, tau, s, 5, 50)],
+    [discrete, rescaled_exact(10, tau, s, 5, 50)],
+    2*s * diff_dist(2*s*x, 1.0, 2*s*5.0)], 
+    [x, 0, 30],
+    [xlabel, "x"],
+    [ylabel, "P(x)"],
+    [legend, "N=1", "  5", "  10", "diffusion"],
+    /*[title, "𝜏 = 1.0, 𝜎 = 0.33, x₀ = 5"],*/
+    [color, "#1F654C", "#226F54", "#559972", "#6EAE81", "#87C38F", "#BEDAA5"],
+    [pdf_file, "fig/rescaled-exact-max.pdf"],
+    [gnuplot_preamble, "set key right top"],
+    [gnuplot_pdf_term_command, "set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,27'"]);
+    
+kill(tau, s);
+```
+
 ## Fix first two moments and vary sigma
 
 
@@ -279,6 +301,24 @@ implicit_plot([(sigma^2/3) * coth(tau/2) = 0.25,
     [legend, false]
 ```
 
+```
+exact_dist(tau, sigma, n0, nmax)
+```
+
+```maxima tags=[]
+plot2d([[discrete, exact_dist(0.0208, 0.2, 24, 60)], 
+    [discrete, exact_dist(0.0808, 0.8, 24, 60)],
+    [discrete, exact_dist(0.208, 0.2, 24, 60)],
+    [discrete, exact_dist(0.208, 0.8, 24, 60)]],
+    [color, "#1F654C", "#226F54", "#559972", "#6EAE81", "#87C38F", "#BEDAA5"],
+    [legend, "A", "B", "C", "D"],
+    [xlabel, "n"],
+    [ylabel, "P(n)"],
+    [pdf_file, "fig/contour-dists.pdf"],
+    [gnuplot_preamble, "set key right"],
+    [gnuplot_pdf_term_command, "set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font 'Latin Modern Roman,27'"]);
+```
+
 ```maxima tags=[]
 plot2d ([(sigma^2/3) * coth(tau/2) = 0.25,
          (sigma^2/3) * coth(tau/2) = 0.5, 
@@ -290,8 +330,8 @@ plot2d ([(sigma^2/3) * coth(tau/2) = 0.25,
         [tau, 0.01, 0.5],
         [color, "#1F654C", "#226F54", "#559972", "#6EAE81", "#87C38F", "#BEDAA5"],
         [legend, false],
-        [xlabel, "s"],
-        [ylabel, "t"],
+        [xlabel, "𝜎"],
+        [ylabel, "𝜏"],
         [pdf_file, "fig/contour-plot-01.pdf"],
         [gnuplot_preamble, "
 set label '0.25' at 0.27, 0.4 front tc rgb '#1F654C'
