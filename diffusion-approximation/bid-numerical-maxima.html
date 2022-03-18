@@ -556,7 +556,7 @@ cpiece(tau, sigma) := ((sigma+1)*(%e^tau-1)) /
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d([[discrete, rescaled_exact(1, 1.0, 0.33, 5, 50)],
@@ -582,12 +582,86 @@ fig/rescaled-exact.pdf
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{67}$}\left[ \mbox{ /tmp/maxout4015.gnuplot } , \mbox{ fig/rescaled-exact.pdf } \right] \]</div></div>
+\[\tag{${\it \%o}_{9}$}\left[ \mbox{ /tmp/maxout99.gnuplot } , \mbox{ fig/rescaled-exact.pdf } \right] \]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>tau: 0.0808;
+s: 0.808;
+
+/* rescaled_exact(N, tau, s, x0, xmax) */
+plot2d([[discrete, rescaled_exact(1, tau, s, 5, 50)],
+    [discrete, rescaled_exact(5, tau, s, 5, 50)],
+    [discrete, rescaled_exact(10, tau, s, 5, 50)],
+    2*s * diff_dist(2*s*x, 1.0, 2*s*5.0)],
+    [x, 0, 30],
+    [xlabel, &quot;x&quot;],
+    [ylabel, &quot;P(x)&quot;],
+    [legend, &quot;N=1&quot;, &quot;  5&quot;, &quot;  10&quot;, &quot;diffusion&quot;],
+    /*[title, &quot;𝜏 = 1.0, 𝜎 = 0.33, x₀ = 5&quot;],*/
+    [color, &quot;#1F654C&quot;, &quot;#226F54&quot;, &quot;#559972&quot;, &quot;#6EAE81&quot;, &quot;#87C38F&quot;, &quot;#BEDAA5&quot;],
+    [pdf_file, &quot;fig/rescaled-exact-max.pdf&quot;],
+    [gnuplot_preamble, &quot;set key right top&quot;],
+    [gnuplot_pdf_term_command, &quot;set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font &#39;Latin Modern Roman,27&#39;&quot;]);
+
+kill(tau, s);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{95}$}0.0808\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{96}$}0.808\]</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+plot2d: expression evaluates to non-numeric value somewhere in plotting range.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+fig/rescaled-exact-max.pdf
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{97}$}\left[ \mbox{ /tmp/maxout99.gnuplot } , \mbox{ fig/rescaled-exact-max.pdf } \right] \]</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{98}$}\mathbf{done}\]</div></div>
 </div>
 </div>
 </div>
@@ -595,7 +669,7 @@ fig/rescaled-exact.pdf
 <h2>Fix first two moments and vary sigma<a class="headerlink" href="#Fix-first-two-moments-and-vary-sigma" title="Permalink to this headline">¶</a></h2>
 <p>Numerically calculate the cumulants.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cumus(dist) := block([len, m1, m2, m3],
@@ -609,7 +683,7 @@ fig/rescaled-exact.pdf
 </div>
 <p>Analytically calculate cumulants of the BD process.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>kaps(tau, n0, sigma) := [
@@ -622,7 +696,7 @@ fig/rescaled-exact.pdf
 </div>
 <p>Given values tau1 and n01, determine tau and n0 such that the BD distribution with parameters (tau, n0, sigma) has the same values of the first two moments as the BD distribution wiwth parameters (tau1, n01, 1).</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>solve((%e^tau-1)/sigma =%e^tau1-1, tau);
@@ -630,15 +704,15 @@ fig/rescaled-exact.pdf
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{15}$}\left[ \tau=\log \left(\sigma\,e^{\tau_{1}}-\sigma+1\right) \right] \]</div></div>
+\[\tag{${\it \%o}_{12}$}\left[ \tau=\log \left(\sigma\,e^{\tau_{1}}-\sigma+1\right) \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>psubst([tau=log(sigma*%e^tau1-sigma+1)], n01 * %e^(tau1 - tau));
@@ -646,15 +720,15 @@ fig/rescaled-exact.pdf
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{16}$}\frac{n_{1}\,e^{\tau_{1}}}{\sigma\,e^{\tau_{1}}-\sigma+1}\]</div></div>
+\[\tag{${\it \%o}_{13}$}\frac{n_{1}\,e^{\tau_{1}}}{\sigma\,e^{\tau_{1}}-\sigma+1}\]</div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>momequiv (tau1, n01, sigma) :=
@@ -665,7 +739,7 @@ fig/rescaled-exact.pdf
 </div>
 <p>Comparison for n01 = 12.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>momequiv(0.1, 12, 0.2);
@@ -674,23 +748,23 @@ momequiv(0.1, 12, 0.8);
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{18}$}\left[ 0.02081601914619123 , 12.98884134314821 \right] \]</div></div>
+\[\tag{${\it \%o}_{15}$}\left[ 0.02081601914619123 , 12.98884134314821 \right] \]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{19}$}\left[ 0.08078403386384084 , 12.23282137331797 \right] \]</div></div>
+\[\tag{${\it \%o}_{16}$}\left[ 0.08078403386384084 , 12.23282137331797 \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>kaps(0.0208, 13, 0.2);
@@ -699,23 +773,23 @@ kaps(0.0808, 12, 0.8);
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{20}$}\left[ 13.27323175945365 , 1.394872487412134 , 0.5017851379449797 \right] \]</div></div>
+\[\tag{${\it \%o}_{17}$}\left[ 13.27323175945365 , 1.394872487412134 , 0.5017851379449797 \right] \]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{21}$}\left[ 13.00984852888103 , 1.368539208109951 , 1.356838814088694 \right] \]</div></div>
+\[\tag{${\it \%o}_{18}$}\left[ 13.00984852888103 , 1.368539208109951 , 1.356838814088694 \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d([[discrete, exact_dist(0.0208, 0.2, 13, 30)],
@@ -736,15 +810,15 @@ fig/n01-12.pdf
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{22}$}\left[ \mbox{ /tmp/maxout4015.gnuplot } , \mbox{ fig/n01-12.pdf } \right] \]</div></div>
+\[\tag{${\it \%o}_{19}$}\left[ \mbox{ /tmp/maxout99.gnuplot } , \mbox{ fig/n01-12.pdf } \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cumus(exact_dist(0.0208, 0.2, 13, 30));
@@ -753,24 +827,24 @@ cumus(exact_dist(0.0808, 0.8, 12, 30));
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{23}$}\left[ 13.27323175945372 , 1.394872487409998 , 0.5017851379498097 \right] \]</div></div>
+\[\tag{${\it \%o}_{20}$}\left[ 13.27323175945372 , 1.394872487409998 , 0.5017851379498097 \right] \]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{24}$}\left[ 13.00984852887727 , 1.368539208090539 , 1.356838813116156 \right] \]</div></div>
+\[\tag{${\it \%o}_{21}$}\left[ 13.00984852887727 , 1.368539208090539 , 1.356838813116156 \right] \]</div></div>
 </div>
 <p>Comparison for n01 = 24</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>momequiv(0.1, 24, 0.2);
@@ -779,23 +853,23 @@ momequiv(0.1, 24, 0.8);
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{25}$}\left[ 0.02081601914619123 , 25.97768268629641 \right] \]</div></div>
+\[\tag{${\it \%o}_{22}$}\left[ 0.02081601914619123 , 25.97768268629641 \right] \]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{26}$}\left[ 0.08078403386384084 , 24.46564274663594 \right] \]</div></div>
+\[\tag{${\it \%o}_{23}$}\left[ 0.08078403386384084 , 24.46564274663594 \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>kaps(0.0208, 26, 0.2);
@@ -804,23 +878,23 @@ kaps(0.0808, 24, 0.8);
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{27}$}\left[ 26.5464635189073 , 2.789744974824269 , 1.003570275889959 \right] \]</div></div>
+\[\tag{${\it \%o}_{24}$}\left[ 26.5464635189073 , 2.789744974824269 , 1.003570275889959 \right] \]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{28}$}\left[ 26.01969705776206 , 2.737078416219902 , 2.713677628177388 \right] \]</div></div>
+\[\tag{${\it \%o}_{25}$}\left[ 26.01969705776206 , 2.737078416219902 , 2.713677628177388 \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cumus(exact_dist(0.0208, 0.2, 26, 40));
@@ -829,23 +903,23 @@ cumus(exact_dist(0.0808, 0.8, 24, 40));
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{29}$}\left[ 26.5464634577302 , 2.789745703590143 , 1.003538327582646 \right] \]</div></div>
+\[\tag{${\it \%o}_{26}$}\left[ 26.5464634577302 , 2.789745703590143 , 1.003538327582646 \right] \]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{30}$}\left[ 26.01969669919773 , 2.737082285673864 , 2.713496631244197 \right] \]</div></div>
+\[\tag{${\it \%o}_{27}$}\left[ 26.01969669919773 , 2.737082285673864 , 2.713496631244197 \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d([[discrete, exact_dist(0.0208, 0.2, 26, 40)],
@@ -866,16 +940,16 @@ fig/n01-24.pdf
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{31}$}\left[ \mbox{ /tmp/maxout4015.gnuplot } , \mbox{ fig/n01-24.pdf } \right] \]</div></div>
+\[\tag{${\it \%o}_{28}$}\left[ \mbox{ /tmp/maxout99.gnuplot } , \mbox{ fig/n01-24.pdf } \right] \]</div></div>
 </div>
 <p>Comparison for n01 = 48</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>momequiv(0.1, 49, 0.2);
@@ -884,23 +958,23 @@ momequiv(0.1, 49, 0.8);
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{32}$}\left[ 0.02081601914619123 , 53.03776881785518 \right] \]</div></div>
+\[\tag{${\it \%o}_{29}$}\left[ 0.02081601914619123 , 53.03776881785518 \right] \]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{33}$}\left[ 0.08078403386384084 , 49.9506872743817 \right] \]</div></div>
+\[\tag{${\it \%o}_{30}$}\left[ 0.08078403386384084 , 49.9506872743817 \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>kaps(0.0208, 53, 0.2);
@@ -909,23 +983,23 @@ kaps(0.0808, 50, 0.8);
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{34}$}\left[ 54.11394486546487 , 5.686787833295624 , 2.045739408544917 \right] \]</div></div>
+\[\tag{${\it \%o}_{31}$}\left[ 54.11394486546487 , 5.686787833295624 , 2.045739408544917 \right] \]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{35}$}\left[ 54.20770220367096 , 5.70224670045813 , 5.653495058702892 \right] \]</div></div>
+\[\tag{${\it \%o}_{32}$}\left[ 54.20770220367096 , 5.70224670045813 , 5.653495058702892 \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>cumus(exact_dist(0.0208, 0.2, 53, 80));
@@ -934,23 +1008,23 @@ cumus(exact_dist(0.0808, 0.8, 50, 80));
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{36}$}\left[ 54.11394486546723 , 5.686787833164999 , 2.045739415683784 \right] \]</div></div>
+\[\tag{${\it \%o}_{33}$}\left[ 54.11394486546723 , 5.686787833164999 , 2.045739415683784 \right] \]</div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{37}$}\left[ 54.20770220365917 , 5.702246700775959 , 5.65349503303878 \right] \]</div></div>
+\[\tag{${\it \%o}_{34}$}\left[ 54.20770220365917 , 5.702246700775959 , 5.65349503303878 \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d([[discrete, exact_dist(0.0208, 0.2, 53, 80)],
@@ -971,15 +1045,15 @@ fig/n01-48.pdf
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{38}$}\left[ \mbox{ /tmp/maxout4015.gnuplot } , \mbox{ fig/n01-48.pdf } \right] \]</div></div>
+\[\tag{${\it \%o}_{35}$}\left[ \mbox{ /tmp/maxout99.gnuplot } , \mbox{ fig/n01-48.pdf } \right] \]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>load(implicit_plot);
@@ -987,15 +1061,15 @@ fig/n01-48.pdf
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{39}$}\mbox{ /usr/share/maxima/5.45.1/share/contrib/implicit\_plot.lisp }\]</div></div>
+\[\tag{${\it \%o}_{36}$}\mbox{ /usr/share/maxima/5.45.1/share/contrib/implicit\_plot.lisp }\]</div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>implicit_plot([(sigma^2/3) * coth(tau/2) = 0.25,
@@ -1040,8 +1114,45 @@ plot2d: nothing to plot for errexp1.
 
 </pre></div></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>exact_dist(tau, sigma, n0, nmax)
+</pre></div>
+</div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d([[discrete, exact_dist(0.0208, 0.2, 24, 60)],
+    [discrete, exact_dist(0.0808, 0.8, 24, 60)],
+    [discrete, exact_dist(0.208, 0.2, 24, 60)],
+    [discrete, exact_dist(0.208, 0.8, 24, 60)]],
+    [color, &quot;#1F654C&quot;, &quot;#226F54&quot;, &quot;#559972&quot;, &quot;#6EAE81&quot;, &quot;#87C38F&quot;, &quot;#BEDAA5&quot;],
+    [legend, &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;],
+    [xlabel, &quot;n&quot;],
+    [ylabel, &quot;P(n)&quot;],
+    [pdf_file, &quot;fig/contour-dists.pdf&quot;],
+    [gnuplot_preamble, &quot;set key right&quot;],
+    [gnuplot_pdf_term_command, &quot;set term pdfcairo lw 3 size 17.2 cm, 12.9 cm font &#39;Latin Modern Roman,27&#39;&quot;]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+fig/contour-dists.pdf
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="math notranslate nohighlight">
+\[\tag{${\it \%o}_{49}$}\left[ \mbox{ /tmp/maxout99.gnuplot } , \mbox{ fig/contour-dists.pdf } \right] \]</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>plot2d ([(sigma^2/3) * coth(tau/2) = 0.25,
@@ -1054,8 +1165,8 @@ plot2d: nothing to plot for errexp1.
         [tau, 0.01, 0.5],
         [color, &quot;#1F654C&quot;, &quot;#226F54&quot;, &quot;#559972&quot;, &quot;#6EAE81&quot;, &quot;#87C38F&quot;, &quot;#BEDAA5&quot;],
         [legend, false],
-        [xlabel, &quot;s&quot;],
-        [ylabel, &quot;t&quot;],
+        [xlabel, &quot;𝜎&quot;],
+        [ylabel, &quot;𝜏&quot;],
         [pdf_file, &quot;fig/contour-plot-01.pdf&quot;],
         [gnuplot_preamble, &quot;
 set label &#39;0.25&#39; at 0.27, 0.4 front tc rgb &#39;#1F654C&#39;
@@ -1085,19 +1196,19 @@ fig/contour-plot-01.pdf
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="math notranslate nohighlight">
-\[\tag{${\it \%o}_{56}$}\left[ \mbox{ /tmp/maxout4015.gnuplot } , \mbox{ fig/contour-plot-01.pdf } \right] \]</div></div>
+\[\tag{${\it \%o}_{52}$}\left[ \mbox{ /tmp/maxout99.gnuplot } , \mbox{ fig/contour-plot-01.pdf } \right] \]</div></div>
 </div>
 </div>
 <div class="section" id="BID">
 <h2>BID<a class="headerlink" href="#BID" title="Permalink to this headline">¶</a></h2>
 <p>Generate the distribution for the BD process with n_0 = 1 from the geometric series. The answer goes into the array dist which runs from 0 to nmax.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>BDdist(tau, sigma, dist, nmax) := block(
@@ -1118,7 +1229,7 @@ fig/contour-plot-01.pdf
 </div>
 <p>Given three arrays a, b, c which run form 0 to nmax, conolve a with b, writing the result into c.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>convolve(a, b, c, nmax) := block(
@@ -1133,7 +1244,7 @@ fig/contour-plot-01.pdf
 </div>
 <p>Compute the repeated convolution of an array a with itself m times, writing the result into an array b. Both arrays are assumed to run from 0 to nmax.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>convolpow(a, m, b, nmax) := block(
@@ -1174,7 +1285,7 @@ fig/contour-plot-01.pdf
 </div>
 <p>Special case of the BID process with n_0 zero but m nonzero.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-maxima notranslate"><div class="highlight"><pre><span></span>Idist(tau, sigma, m, dist, nmax) := block(
