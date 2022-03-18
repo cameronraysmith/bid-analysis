@@ -10,6 +10,7 @@
    :glob:
    
    exact-solution/exact-solution
+   exact-solution/bid-hamiltonian-plots
    diffusion-approximation/genfunc-bid-diffapprox
    diffusion-approximation/bid-diffusion-solution
    diffusion-approximation/bid-diffusion-solution-dimensionless
